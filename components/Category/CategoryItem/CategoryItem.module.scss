@@ -1,0 +1,48 @@
+.CategoryItem {
+    filter: drop-shadow(0px 0px 0px rgba(0, 0, 0, 0.10)) drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.10)) drop-shadow(0px 14px 14px rgba(0, 0, 0, 0.09)) drop-shadow(0px 32px 19px rgba(0, 0, 0, 0.05)) drop-shadow(0px 56px 23px rgba(0, 0, 0, 0.01)) drop-shadow(0px 88px 25px rgba(0, 0, 0, 0.00));
+    max-width: 50%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin-top: 96px;
+    padding: 340px 16px 16px;
+
+    .imageContainer {
+        width: calc(100% - 64px);
+        overflow: hidden;
+        border-radius: 12px;
+        position: absolute;
+        top: -80px;
+        left: 32px;
+
+        .title {
+            position: absolute;
+            bottom: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            color: #FFF;
+            font-family: Manrope;
+            font-size: 32px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            z-index: 2;
+        }
+
+        img {
+            transition: all .2s ease;
+            width: 100%;
+            height: 100%;
+            max-height: 400px;
+            object-fit: cover;
+            position: relative;
+            z-index: 0;
+            &:hover {
+                transform: scale(1.05);
+            }
+        }
+    }
+}

@@ -1,95 +1,46 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+import Image from "next/image"
+import Header from "@/components/Header/Header"
+import data from "../public/data/data.json"
+import type { Metadata } from "next"
+import OpenedComponent from "@/components/OpenedComponent/OpenedComponent"
+import About from "@/components/About/About"
+import Footer from "@/components/Footer/Footer"
+import Category from "@/components/Category/Category"
+import BannerAbout from "@/components/BannerAbout/BannerAbout"
+import Reviews from '../components/Reviews/Reviews';
+import Steps from "@/components/Steps/Steps"
+import PortfolioSlider from "@/components/PortfolioSlider/PortfolioSlider"
+import Form from "@/components/Form/Form"
+import FAQ from "@/components/FAQ/FAQ"
+import Contacts from "@/components/Contacts/Contacts"
+
+export const metadata: Metadata = {
+    title: data.seo.title,
+    description: data.seo.description,
+    openGraph: {
+        title: data.seo.openGraph.title,
+        images: data.seo.openGraph.images,
+        description: data.seo.openGraph.description,
+    },
+}
 
 export default function Home() {
-  return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+    return (
+        <>
+            <Header data={data.globals.header} />
+            <main>
+              {data.content.openedComponent && <OpenedComponent data={data.content.openedComponent}/>}
+              {data.content.About && <About data={data.content.About} />}
+              {data.content.Category && <Category data={data.content.Category} />}
+              {data.content.BannerAbout && <BannerAbout data={data.content.BannerAbout}/>}
+              {data.content.Reviews && <Reviews data={data.content.Reviews}/>}
+              {data.content.Steps && <Steps data={data.content.Steps} />}
+              {data.content.portfolioSlider && <PortfolioSlider data={data.content.portfolioSlider}/>}
+              {data.content.Form && <Form data={data.content.Form} />}
+              {data.content.FAQ && <FAQ data={data.content.FAQ}/>}
+              {data.content.Contacts && <Contacts data={data.content.Contacts}/>}
+            </main>
+            <Footer data={data.globals.footer} />
+        </>
+    )
 }

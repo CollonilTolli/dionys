@@ -1,0 +1,26 @@
+.Category {
+    .title {
+        font-family: Manrope;
+        font-size: 32px;
+        font-weight: 700;
+        line-height: 44px;
+        letter-spacing: 0em;
+        text-align: center;
+        margin: 0 auto;
+    }
+    .subtitle{
+        font-family: Manrope;
+        font-size: 32px;
+        font-weight: 400;
+        line-height: 44px;
+        letter-spacing: 0em;
+        text-align: center;   
+        margin: 7px auto 0;     
+        display: block;
+    }
+    .categories{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+}

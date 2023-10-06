@@ -1,0 +1,81 @@
+.BannerAbout {
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 20px;
+    .banner{
+        padding: 60px 0 92px;
+        background-color: #F5F5F5;
+        position: relative;
+        margin-top: 154px;
+        overflow-x: hidden;
+        overflow-y: clip;
+    }
+    .container {
+        position: relative;
+        z-index: 1;
+        .title {
+            h3 {
+                color: #000;
+                font-family: Manrope;
+                font-size: 32px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: normal;
+                margin: 0;
+
+                strong {
+                    color: var(--bordo, #9B2D30);
+                    font-family: Manrope;
+                    font-size: 32px;
+                    font-style: normal;
+                    font-weight: 700;
+                    line-height: normal;
+                    text-transform: uppercase;
+                }
+            }
+        }
+
+        .text {
+            max-width: 45vw;
+            margin-top: 31px;
+
+            p {
+                color: #000;
+                font-family: Manrope;
+                font-size: 24px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+                margin-top: 1em;
+            }
+        }
+    }
+
+    .Image {
+        position: absolute;
+        right: -50px;
+        bottom: -75px;
+        height: 100%;
+        width: 40vw;
+        z-index: 0;
+        user-select: none;
+        img {
+            object-fit: contain;
+        }
+    }
+    .scrollButton{
+        cursor: pointer;
+        background-color: transparent;
+        border: 10px solid white;
+        border-radius: 50%;
+        position: absolute;
+        left: calc(50% - 70px);
+        padding: 0;
+        margin: 0;
+        bottom: -25px;
+        transition: .2s ease;
+        &:hover{
+            bottom: -27px;
+        }
+    }
+}

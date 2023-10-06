@@ -1,0 +1,90 @@
+@import "@/app/mixins.scss";
+.About {
+    position: relative;
+    overflow: hidden;
+    @include breakpoint(xl){
+        overflow: unset;
+    }
+    .content {
+        margin-top: 70px;
+
+        &_title {
+            color: var(--black);
+            text-align: center;
+            font-family: Manrope;
+            font-size: 32px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+        }
+
+        &_description {
+            margin-top: 60px;
+            color: var(--black);
+            text-align: center;
+            font-family: Manrope;
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+
+            strong {
+                color: var(--bordo);
+                font-family: Manrope;
+                font-size: 24px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: normal;
+            }
+        }
+
+        .aboutItems {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 60px;
+            padding-bottom: 100px;
+            &_item {
+                max-width: 45%;
+                width: 100%;
+                position: relative;
+                &::before{
+                    content: "";
+                    display: block;
+                    border-radius: 50%;
+                    background-color: var(--bordo);
+                    width: 75px;
+                    height: 75px;
+                    position: absolute;
+                    left: 0;
+                    top: 16px;
+                }
+                &_text {
+                    margin: 0 0 16px 35px;
+                    border-radius: 12px;
+                    background: #FFF;
+                    box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.10), 0px 1px 2px 0px rgba(0, 0, 0, 0.10), 0px 4px 4px 0px rgba(0, 0, 0, 0.09), 0px 9px 5px 0px rgba(0, 0, 0, 0.05), 0px 16px 6px 0px rgba(0, 0, 0, 0.01), 0px 25px 7px 0px rgba(0, 0, 0, 0.00);
+                    padding: 32px 56px;
+                }
+                &_image{
+                    position: absolute;
+                    z-index: 2;
+                    left: 0;
+                    top: 10px;
+                }
+            }
+        }
+    }
+    .pseudo{
+        position: absolute;
+        top: 0;
+        left: -10%;
+        &_right{
+            top: unset;
+            bottom: 0;
+            left: unset;
+            right: -10%;
+        }
+    }
+}

@@ -1,0 +1,86 @@
+@import "@/app/mixins.scss";
+
+@font-face {
+  font-family: Manrope;
+  src: url(/fonts/Manrope-VariableFont_wght.ttf);
+}
+
+html {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+
+  // scss varibles
+  --bordo: #9B2D30;
+  --gradient: linear-gradient(268.86deg, #9B2D30 -43.81%, #FA2D32 130.17%);
+  --minor-text: #AAABAB;
+  --black: #000000;
+  --white: #FFFFFF;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+  min-height: 200vh;
+  position: relative;
+
+  * {
+    box-sizing: border-box;
+    font-family: Manrope;
+  }
+
+  h1 {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 44px;
+    letter-spacing: 0px;
+    text-align: left;
+  }
+
+  h2 {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 33px;
+    letter-spacing: 0px;
+    text-align: left;
+  }
+
+  h3 {
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 33px;
+    letter-spacing: 0em;
+    text-align: left;
+  }
+
+  h5,
+  p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22px;
+    letter-spacing: 0px;
+    text-align: left;
+    margin: 0;
+  }
+
+  h6 {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 22px;
+    letter-spacing: 0em;
+    text-align: left;
+  }
+
+  .container {
+    margin: 0 auto;
+    padding: 0 16px;
+    max-width: 1192px;
+    width: 100%;
+  }
+
+  img {
+    font-size: 0;
+    line-height: 0;
+  }
+}
