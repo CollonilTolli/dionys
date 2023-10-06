@@ -1,5 +1,8 @@
 @import "@/app/mixins.scss";
 
+.ProductsList{
+  padding: 30px 0;
+}
 .ProductList_content{
   display: flex;
   flex-wrap: wrap;
@@ -10,16 +13,23 @@
   border-radius: 12px;
   position: relative;
   overflow: hidden;
-  @include breakpoint(xs){
-    height: 360px;
+  -webkit-box-shadow: 0px 0px 8px 0px rgba(34, 60, 80, 0.2);
+  -moz-box-shadow: 0px 0px 8px 0px rgba(34, 60, 80, 0.2);
+  box-shadow: 0px 0px 8px 0px rgba(34, 60, 80, 0.2);
+  img {
+    transition: .2s linear transform;
   }
-  @include breakpoint(s){
-    height: 251px;
-  }
-  @include breakpoint(m){
-    height: 251px;
+  &:hover{
+    img{
+      transform: scale(1.1);
+    }
   }
   .ProductList_content_link{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .ProductList_content_text{
     color: var(--white);
     text-decoration: unset;
     font-family: Manrope;
