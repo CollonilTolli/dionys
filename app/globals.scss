@@ -31,11 +31,16 @@ body {
   }
 
   h1 {
-    font-size: 32px;
+    color: #000;
+    font-family: Manrope;
+    font-size: 24px;
+    font-style: normal;
     font-weight: 700;
-    line-height: 44px;
-    letter-spacing: 0px;
-    text-align: left;
+    line-height: normal;
+
+    @include breakpoint(s) {
+      font-size: 32px;
+    }
   }
 
   h2 {
@@ -82,5 +87,32 @@ body {
   img {
     font-size: 0;
     line-height: 0;
+  }
+}
+
+.swiper {
+  &-pagination {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &-bullet {
+      width: 16px;
+      height: 16px;
+      background-color: #D9D9D9;
+      border-radius: 50%;
+      transition: .2s ease;
+      margin: 60px 0;
+
+      &:not(:first-of-type) {
+        margin-left: 12px;
+      }
+
+      &-active {
+        background-color: var(--bordo);
+        transform: scale(1.5);
+      }
+    }
   }
 }

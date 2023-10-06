@@ -193,7 +193,12 @@
                     "titleImage": "/images/Zaboryizprofnastila.jpg",
                     "price": "от 258000 рублей",
                     "imagesTitle": "Примеры выполненных работ из профнастила в Твери",
-                    "imagesList": [],
+                    "imagesList": [
+                        "/images/Zaboryizprofnastila.jpg",
+                        "/images/Zaboryizprofnastila.jpg",
+                        "/images/Zaboryizprofnastila.jpg",
+                        "/images/Zaboryizprofnastila.jpg"
+                    ],
                     "textContent": [
                         {
                             "id": "sadasdfwsedrwe",
@@ -452,7 +457,12 @@
                     "titleImage": "/images/Zaboryizprofnastila.jpg",
                     "price": "от 258000 рублей",
                     "imagesTitle": "Примеры выполненных работ из профнастила в Твери",
-                    "imagesList": ["/images/Zaboryizprofnastila.jpg", "/images/Zaboryizprofnastila.jpg", "/images/Zaboryizprofnastila.jpg", "/images/Zaboryizprofnastila.jpg"],
+                    "imagesList": [
+                        "/images/Zaboryizprofnastila.jpg",
+                        "/images/Zaboryizprofnastila.jpg",
+                        "/images/Zaboryizprofnastila.jpg",
+                        "/images/Zaboryizprofnastila.jpg"
+                    ],
                     "textContent": [
                         {
                             "id": "sadasdfwsedrwe",

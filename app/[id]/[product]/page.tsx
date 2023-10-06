@@ -7,6 +7,8 @@ import { notFound } from "next/navigation"
 import { usePathname } from "next/navigation"
 import Breadcrumbs from "@/components/Breadcrumbs/Breadcrumbs"
 import Price from '@/components/Price/Price';
+import TextContentConstructor from "@/components/TextContentConstructor/TextContentConstructor"
+import SliderDetail from "@/components/SliderDetail/SliderDetail"
 
 export function fData (responce:any, categoryName:any, productName:any) {
     const resp = responce.find((category:any) => category.id === categoryName)
@@ -30,6 +32,8 @@ export default function Page() {
                 <div className="container"><h1>{data.content.nameDetail}</h1></div>
                 <Breadcrumbs data={data.globals.breadcrumbs}/>
                 <div className="container"><Price data={data.content.price}/></div>
+                <TextContentConstructor data={data.content.textContent} />
+                <SliderDetail data={data.content} />
                 {data.content.Form && <Form data={data.content.Form} />}
             </main>
             <Footer data={data.globals.footer} />
