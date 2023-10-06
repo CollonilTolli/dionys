@@ -2,11 +2,11 @@
 import responce from "@/public/data/category/data.json"
 import Header from "@/components/Header/Header"
 import Footer from "@/components/Footer/Footer"
-import _ from "lodash"
 import Form from "@/components/Form/Form"
-import TestingClientComponent from "@/components/TestingClientComponent/TestingClientComponent"
 import { notFound } from "next/navigation"
 import { usePathname } from "next/navigation"
+import Breadcrumbs from "@/components/Breadcrumbs/Breadcrumbs"
+import Price from '@/components/Price/Price';
 
 export function fData (responce:any, categoryName:any, productName:any) {
     const resp = responce.find((category:any) => category.id === categoryName)
@@ -27,7 +27,9 @@ export default function Page() {
         <div>
             <Header data={data.globals.header} />
             <main>
-                
+                <div className="container"><h1>{data.content.nameDetail}</h1></div>
+                <Breadcrumbs data={data.globals.breadcrumbs}/>
+                <div className="container"><Price data={data.content.price}/></div>
                 {data.content.Form && <Form data={data.content.Form} />}
             </main>
             <Footer data={data.globals.footer} />

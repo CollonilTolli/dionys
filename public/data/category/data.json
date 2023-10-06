@@ -423,7 +423,11 @@
                             "link": "/"
                         },
                         {
-                            "path": "Цены на заборы в Твери"
+                            "path": "Цены на заборы в Твери",
+                            "link": "/fences"
+                        },
+                        {
+                            "path": "Заборы из профнастила в Твери"
                         }
                     ],
                     "error": {
@@ -448,7 +452,7 @@
                     "titleImage": "/images/Zaboryizprofnastila.jpg",
                     "price": "от 258000 рублей",
                     "imagesTitle": "Примеры выполненных работ из профнастила в Твери",
-                    "imagesList": [],
+                    "imagesList": ["/images/Zaboryizprofnastila.jpg", "/images/Zaboryizprofnastila.jpg", "/images/Zaboryizprofnastila.jpg", "/images/Zaboryizprofnastila.jpg"],
                     "textContent": [
                         {
                             "id": "sadasdfwsedrwe",
