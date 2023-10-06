@@ -3,6 +3,7 @@ import classes from "./Contacts.module.scss"
 import cn from "classnames"
 import { YMaps, Map, Placemark } from "@pbe/react-yandex-maps"
 import Link from "next/link"
+
 interface Contacts {
     yaCoord: number[]
     text: string
@@ -39,7 +40,7 @@ export default function Contacts({ data }: { data: Contacts }) {
                     {data.text && <p>{data.text}</p>}
                     <div className={classes.links}>
                         {data.contacts.phoneNumber && (
-                            <p>
+                            <div>
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     width="50"
@@ -77,10 +78,10 @@ export default function Contacts({ data }: { data: Contacts }) {
                                 <Link href={`tel:${data.contacts.phoneNumber}`}>
                                     {data.contacts.phoneNumber}
                                 </Link>
-                            </p>
+                            </div>
                         )}
                         {data.contacts.telegram && (
-                            <p>
+                            <div>
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     width="50"
@@ -114,10 +115,10 @@ export default function Contacts({ data }: { data: Contacts }) {
                                 >
                                     @{data.contacts.telegram}
                                 </Link>
-                            </p>
+                            </div>
                         )}
                         {data.contacts.location && (
-                            <p>
+                            <div>
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     width="50"
@@ -157,7 +158,7 @@ export default function Contacts({ data }: { data: Contacts }) {
                                     </defs>
                                 </svg>
                                 <address>{data.contacts.location}</address>
-                            </p>
+                            </div>
                         )}
                     </div>
                     {data.chart && (
