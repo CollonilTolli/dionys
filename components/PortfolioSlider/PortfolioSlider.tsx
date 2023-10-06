@@ -51,6 +51,7 @@ export default function PortfolioSlider({ data }: { data: PortfolioSlider }) {
                 </div>
                 <div className={classes.PortfolioSlider_swiper}>
                     <Swiper
+                        slidesPerView={3}
                         navigation={true}
                         modules={[Navigation]}
                         className={classes.swiper}
@@ -62,13 +63,12 @@ export default function PortfolioSlider({ data }: { data: PortfolioSlider }) {
                             >
                                 {element.image && (
                                     <div className={classes.swiper_slide_image}>
-
-                                    <Image
-                                        src={element.image}
-                                        alt={element.title || ""}
-                                        fill
+                                        <Image
+                                            src={element.image}
+                                            alt={element.title || ""}
+                                            fill
                                         />
-                                        </div>
+                                    </div>
                                 )}
                                 <div className={classes.swiper_content}>
                                     {element.title && (

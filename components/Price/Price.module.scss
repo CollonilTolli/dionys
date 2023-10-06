@@ -1,0 +1,18 @@
+@import "@/app/mixins.scss";
+
+.Price {
+    color: var(--bordo);
+    font-family: Manrope;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding: 10px;
+    border: 1px solid var(--bordo);
+    border-radius: 12px; 
+    width: fit-content;
+    margin: 60px 0;
+    @include breakpoint(s){
+        margin: 30px 0 120px;
+    }
+}
