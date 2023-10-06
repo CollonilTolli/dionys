@@ -1,0 +1,37 @@
+@import "@/app/mixins.scss";
+
+.ProductList_content{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+.ProductList_content_item{
+  width: calc(50% - 20px);
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+  @include breakpoint(xs){
+    height: 360px;
+  }
+  @include breakpoint(s){
+    height: 251px;
+  }
+  @include breakpoint(m){
+    height: 251px;
+  }
+  .ProductList_content_link{
+    color: var(--white);
+    text-decoration: unset;
+    font-family: Manrope;
+    position: absolute;
+    bottom: 22px;
+    left: 32px;
+    font-size: 32px;
+    font-weight: 700;
+    .ProductList_content_image{
+     object-fit: cover;
+      height: 100%;
+      width: 100%;
+    }
+  }
+}
