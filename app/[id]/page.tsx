@@ -28,7 +28,7 @@ export default function Page({
         <div>
             <Header data={data.globals.header} />
             <main>
-                <div className="container">
+                <div className="container ">
                     <h1>{data.content.title}</h1>
                 </div>
                 {data.globals.breadcrumbs && <Breadcrumbs data={data.globals.breadcrumbs} />}

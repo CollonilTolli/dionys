@@ -10,15 +10,17 @@ interface Breadcrumbs {
 export default function Breadcrumbs({ data }: { data: Breadcrumbs[] }) {
     return (
         <div className={cn("container", classes.BreadCrumbs)}>
-            {data.map((el) => (
-                <>
-                    {el.link ? (
-                        <Link href={el.link}>{el.path}</Link>
-                    ) : (
-                        <span>{el.path}</span>
-                    )}
-                </>
-            ))}
+            <div className={classes.cont_breadcumb}>
+                {data.map((el) => (
+                    <>
+                        {el.link ? (
+                            <Link className={cn(classes.bread_el) } href={el.link}>{el.path}</Link>
+                        ) : (
+                            <span className={classes.bread_el} >{el.path}</span>
+                        )}
+                   </>
+                ))}
+            </div>
         </div>
     )
 }

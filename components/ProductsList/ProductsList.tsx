@@ -20,14 +20,15 @@ export default function ProductsList({ data }: { data: ProductsList[] }) {
                 <div className={classes.ProductList_content}>
                     {data.map((element) => (
                         <div className={classes.ProductList_content_item}>
-                            <Link href={`${pathname}/${element.product}`}>
+                            <Link  className={classes.ProductList_content_link} href={`${pathname}/${element.product}`}>
                                 <Image
+                                    className={classes.ProductList_content_image}
                                     src={element.content.titleImage}
                                     alt={element.content.name}
                                     width={560}
                                     height={440}
                                 />
-                                {element.content.name}
+                                <div className={classes.ProductList_content_text}>{element.content.name}</div>
                             </Link>
                         </div>
                     ))}
