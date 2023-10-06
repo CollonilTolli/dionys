@@ -10,7 +10,7 @@ import Price from '@/components/Price/Price';
 import TextContentConstructor from "@/components/TextContentConstructor/TextContentConstructor"
 import SliderDetail from "@/components/SliderDetail/SliderDetail"
 
-export function fData (responce:any, categoryName:any, productName:any) {
+export function fData (responce:any, categoryName:string, productName:string) {
     const resp = responce.find((category:any) => category.id === categoryName)
     const data = resp.products.find((product:any) => product.product===productName)
     return data
