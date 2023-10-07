@@ -5,6 +5,7 @@ import axios from "axios"
 import cn from "classnames"
 import Plate from "./Plate"
 import Link from "next/link"
+import Button from "../ui/Button/Button"
 
 interface Form {
     title: string
@@ -92,8 +93,8 @@ export default function Form({ data }: { data: Form }) {
     return (
         <div className={classes.Form}>
             <div className="container">
+                <div className={classes.Title}>{data.title}</div>
                 <div className={classes.Form_content}>
-                    <div className={classes.Title}>{data.title}</div>
                     <div
                         className={cn(
                             classes.Form_content_description,
@@ -126,39 +127,55 @@ export default function Form({ data }: { data: Form }) {
                             </div>
                         )}
                     </div>
-                    <div
-                        className={cn(
-                            classes.Form_content_fields,
-                            classes.Fields
-                        )}
-                    >
-                        <form ref={formRef}>
-                            <div className={classes.Fields_category}>
-                                <span>Меня интересует...</span>
-                                <div className={classes.Fields_category_plates}>
-                                    {data.categoryes.map(
-                                        (el, index) =>
-                                            index < categoryVisible && (
-                                                <Plate data={el} key={el} />
-                                            )
-                                    )}
-                                    {data.categoryes.length !==
-                                        categoryVisible && (
-                                        <div
-                                            className={classes.plate}
-                                            onClick={() =>
-                                                setCategoryVisible(
-                                                    data.categoryes.length
+                    <div className={classes.form}>
+                        <div
+                            className={cn(
+                                classes.Form_content_fields,
+                                classes.Fields
+                            )}
+                        >
+                            <form ref={formRef}>
+                                <div className={classes.Fields_category}>
+                                    <span
+                                        className={
+                                            classes.Fields_category_title
+                                        }
+                                    >
+                                        Меня интересует...
+                                    </span>
+                                    <div
+                                        className={
+                                            classes.Fields_category_plates
+                                        }
+                                    >
+                                        {data.categoryes.length !==
+                                            categoryVisible && (
+                                            <div
+                                                className={cn(
+                                                    classes.plate,
+                                                    classes.more
+                                                )}
+                                                onClick={() =>
+                                                    setCategoryVisible(
+                                                        data.categoryes.length
+                                                    )
+                                                }
+                                            >
+                                                Ещё +
+                                            </div>
+                                        )}
+                                        {data.categoryes.map(
+                                            (el, index) =>
+                                                index < categoryVisible && (
+                                                    <Plate data={el} key={el} />
                                                 )
-                                            }
-                                        >
-                                            Ещё +
-                                        </div>
-                                    )}
+                                        )}
+                                    </div>
                                 </div>
                                 <div className={classes.Fields_category_fields}>
                                     {data.fields.name && (
                                         <input
+                                            required={true}
                                             type="text"
                                             className={classes.field}
                                             name="name"
@@ -167,6 +184,7 @@ export default function Form({ data }: { data: Form }) {
                                     )}
                                     {data.fields.phone && (
                                         <input
+                                            required={true}
                                             type="tel"
                                             className={classes.field}
                                             name="phone_number"
@@ -175,6 +193,7 @@ export default function Form({ data }: { data: Form }) {
                                     )}
                                     {data.fields.email && (
                                         <input
+                                            required={true}
                                             type="email"
                                             className={classes.field}
                                             name="e_mail"
@@ -183,6 +202,7 @@ export default function Form({ data }: { data: Form }) {
                                     )}
                                     {data.fields.anyLink && (
                                         <input
+                                            required={true}
                                             type="text"
                                             className={classes.field}
                                             name="anyLink"
@@ -191,18 +211,23 @@ export default function Form({ data }: { data: Form }) {
                                     )}
                                     {data.fields.textarea && (
                                         <textarea
+                                            required={true}
                                             name="textArea"
                                             placeholder="Опишите Ваш запрос"
                                         />
                                     )}
                                 </div>
-                                <button type="submit">
-                                    {data.btn.content}
-                                </button>
-                            </div>
-                        </form>
-                        <span>
-                            заполняя данную форму вы даете согласие на обработку{" "}
+                                <Button
+                                    data={{
+                                        className: classes.button,
+                                        type: "submit",
+                                        content: `${data.btn.content}`,
+                                    }}
+                                />
+                            </form>
+                        </div>
+                        <span className={classes.policy}>
+                            заполняя данную форму вы даете согласие на обработку
                             <Link href="/policy/">персональных данных</Link>
                         </span>
                     </div>

@@ -1,0 +1,112 @@
+.FAQ {
+    background-color: #F5F5F5;
+    margin-top: 40px;
+    padding: 60px 0;
+
+    &_title {
+        color: #000;
+        text-align: center;
+        font-family: Manrope;
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        margin: 0 auto;
+    }
+    &_questions{
+        margin-top: 60px;
+    }
+}
+
+.FAQItem {
+    background-color: var(--white);
+    border-radius: 12px;
+    margin-bottom: 30px;
+    overflow: hidden;
+    padding: 30px 60px;
+
+    &_head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        &_button {
+            cursor: pointer;
+            svg{
+                transition: all .2s ease;
+                path{
+                    transition: all .2s ease;
+                    transform-origin: 0 31px;
+                }    
+            }
+        }
+
+        &_name {
+            color: #000;
+            font-family: Manrope;
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+        }
+    }
+
+    &_body {
+        min-height: 0;
+        margin: 0;
+        transition: 0.4s ease;
+        font-size: 16px;
+        display: grid;
+        color: #000;
+        /* Наборный текст */
+        font-family: Manrope;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        margin-top: 0;
+
+        .text {
+            display: grid;
+            grid-template-rows: 0fr;
+            transition: 0.2s ease 0s;
+            opacity: 0;
+
+            * {
+                transition: all .2s ease;
+                height: 0;
+                opacity: 0;
+                transform-origin: 0 0;
+            }
+        }
+    }
+
+    &_opened {
+        .FAQItem_head {
+            &_button {
+                svg{
+                    fill: var(--bordo);
+                    path {
+                        transform: scaleY(-1);
+                        fill: white;
+                    }
+                }
+            }
+        }
+
+        .FAQItem_body {
+            margin-top: 60px;
+
+            .text {
+                grid-template-rows: 1fr;
+                opacity: 1;
+
+                * {
+                    opacity: 1;
+                    height: 100%;
+                    transform: scaleY(1);
+                }
+            }
+        }
+    }
+}

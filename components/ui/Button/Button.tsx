@@ -31,7 +31,8 @@ export default function Button({
                             className={cn(
                                 classes.button,
                                 classes.withImage,
-                                className
+                                className,
+                                data.className,
                             )}
                             href={data.link}
                             title={data.content}
@@ -49,7 +50,8 @@ export default function Button({
                             className={cn(
                                 classes.button,
                                 classes.withImage,
-                                className
+                                className,
+                                data.className,
                             )}
                             onClick={() => handleClick(data.func)}
                         >
@@ -73,7 +75,8 @@ export default function Button({
                             className={cn(
                                 classes.button,
                                 classes.full,
-                                className
+                                className,
+                                data.className,
                             )}
                             href={data.link}
                             title={data.content}
@@ -85,7 +88,8 @@ export default function Button({
                             className={cn(
                                 classes.button,
                                 classes.full,
-                                className
+                                className,
+                                data.className,
                             )}
                             onClick={() => handleClick(data.func)}
                         >
@@ -102,7 +106,8 @@ export default function Button({
                             className={cn(
                                 classes.button,
                                 classes.main,
-                                className
+                                className,
+                                data.className,
                             )}
                             href={data.link}
                             title={data.content}
@@ -112,9 +117,10 @@ export default function Button({
                     ) : (
                         <button
                             className={cn(
+                                className,
+                                data.className,
                                 classes.button,
                                 classes.main,
-                                className
                             )}
                             onClick={() => handleClick(data.func)}
                         >

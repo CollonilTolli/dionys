@@ -41,7 +41,7 @@ export default function FAQItem({ data }: { data: questions }) {
                 </div>
             </div>
             <div className={classes.FAQItem_body}>
-                <div dangerouslySetInnerHTML={{ __html: data.text }} />
+                <div className={classes.text} dangerouslySetInnerHTML={{ __html: data.text }} />
             </div>
         </div>
     )

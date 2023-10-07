@@ -1,3 +1,186 @@
-.plate_active{
+.plate_active {
     background-color: limegreen;
+}
+
+.Form {
+    margin-top: 100px;
+
+    .Title {
+        color: #000;
+        text-align: center;
+        font-family: Manrope;
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+    }
+
+    .form {
+        display: flex;
+        flex-direction: column;
+        max-width: 60%;
+        width: 100%;
+    }
+
+    .policy {
+        color: var(--minor-text, #AAABAB);
+        font-size: 17.292px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: normal;
+        margin-top: 15px;
+        margin-left: 10px;
+        a {
+            margin-left: 5px;
+            color: var(--minor-text, #AAABAB);
+            font-size: 17.292px;
+            font-style: normal;
+            font-weight: 300;
+            line-height: normal;
+            text-decoration-line: underline;
+        }
+    }
+
+    &_content {
+        margin-top: 60px;
+        display: flex;
+        justify-content: space-between;
+
+        &_description {
+            max-width: 30%;
+        }
+
+        .Description {
+            &_text {
+                color: #000;
+                font-family: Manrope;
+                font-size: 24px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: normal;
+
+                span>span {
+                    color: #000;
+                    font-family: Manrope;
+                    font-size: 24px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: normal;
+                }
+            }
+
+            &_chart {
+                display: flex;
+                align-items: center;
+                margin-top: 30px;
+
+                span {
+                    color: #000;
+                    font-family: Manrope;
+                    font-size: 20px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: normal;
+                    margin-left: 20px;
+                }
+            }
+        }
+
+        .Fields {
+            display: inline-flex;
+            padding: 60px 46.001px 60px 47.594px;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 48px;
+            border-radius: 24px;
+            background: linear-gradient(0deg, #FFF 0%, #FFF 100%), linear-gradient(179deg, rgba(255, 255, 255, 0.69) 0.78%, rgba(242, 242, 242, 0.69) 102.39%), #EEE;
+            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.11);
+            width: 100%;
+
+            .button {
+                border-radius: 16px;
+                padding: 24px 64px;
+            }
+
+            &_category {
+                &_title {
+                    color: #490202;
+                    font-family: Manrope;
+                    font-size: 20px;
+                    font-style: normal;
+                    font-weight: 500;
+                    line-height: normal;
+                }
+
+                &_plates {
+                    display: flex;
+                    flex-wrap: wrap;
+                    margin: 24px 0 0;
+                    gap: 8px;
+
+                    .plate {
+                        padding: 16px 40px;
+                        border-radius: 8px;
+                        border: 2px solid rgba(73, 2, 2, 0.30);
+                        color: rgba(73, 2, 2, 0.30);
+                        text-align: center;
+                        font-family: Manrope;
+                        font-size: 20px;
+                        font-style: normal;
+                        font-weight: 500;
+                        line-height: normal;
+                        transition: .2s ease;
+                        cursor: pointer;
+
+                        &_active {
+                            color: #fff;
+                            border: 2px solid var(--bordo, #9B2D30);
+                            background: var(--bordo, #9B2D30);
+                        }
+
+                        &:hover {
+                            color: #fff;
+                            border: 2px solid #CC3F44;
+                            background-color: #CC3F44;
+                        }
+                    }
+
+                    .more {
+                        order: 1
+                    }
+                }
+
+                &_fields {
+                    display: flex;
+                    flex-direction: column;
+                    margin: 63px 0 48px;
+
+                    input,
+                    textarea {
+                        border: none;
+                        border-bottom: rgba(73, 2, 2, 0.30) 3px solid;
+                        width: 100%;
+                        resize: none;
+                        color: #BDA8A8;
+                        font-size: 20px;
+                        font-style: normal;
+                        font-weight: 500;
+                        line-height: normal;
+                        margin-bottom: 20px;
+                        outline: none;
+                        padding: 15px 0;
+                        height: 60px;
+
+                        &:not(:placeholder-shown),
+                        &:focus {
+                            color: #9B2D30;
+                            border-bottom: #9B2D30 3px solid;
+                        }
+                    }
+                }
+
+            }
+        }
+    }
 }
