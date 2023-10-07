@@ -1,0 +1,85 @@
+.Contacts {
+    .Title {
+        color: #000;
+        text-align: center;
+        font-family: Manrope;
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        margin-top: 127px;
+    }
+
+    &_content {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 87px;
+        height: fit-content;
+    }
+
+    &_map {
+        width: 100%;
+        overflow: hidden;
+        border-radius: 12px;
+        border: 3px solid #F5F5F5 inset;
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.11);
+    }
+
+    &_contacts {
+        margin-left: 60px;
+        border-radius: 12px;
+        border: 3px solid #F5F5F5;
+        background: #FFF;
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.11);
+        padding: 24px 40px 30px;
+        .text {
+            color: var(--minor-text, #AAABAB);
+            font-family: Manrope;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+        }
+
+        .links {
+            margin: 25px 0 78px;
+
+            &_item {
+                display: flex;
+                align-items: center;
+                svg{
+                    width: 50px;
+                    height: 50px;
+                }
+                &:not(:first-of-type) {
+                    margin-top: 20px;
+                }
+
+                a,
+                address {
+                    margin-left: 20px;
+                    color: #1A1A1A;
+                    font-size: 16px;
+                    font-style: normal;
+                    font-weight: 700;
+                    line-height: normal;
+                    text-decoration: none;
+                }
+                a{
+                    &:hover{
+                        color: var(--bordo);
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+
+        .chart {
+            color: var(--minor-text, #AAABAB);
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+        }
+    }
+}

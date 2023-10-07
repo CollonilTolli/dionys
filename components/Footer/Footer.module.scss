@@ -1,0 +1,135 @@
+.Footer {
+    .Logotype {
+        width: fit-content;
+        margin: 0 auto;
+        margin-top: 135px;
+        margin-bottom: 40px;
+    }
+
+    &_top {
+        border-top: 1px solid #AAABAB;
+        padding: 46px 0 60px;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+
+        .contacts {
+            max-width: 33%;
+
+            &_description {
+                color: var(--minor-text, #AAABAB);
+                font-family: Manrope;
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+            }
+
+            &_contacts {
+                margin-top: 30px;
+
+                &_item {
+                    display: flex;
+                    align-items: center;
+
+                    &:not(:last-of-type) {
+                        margin-bottom: 20px;
+                    }
+
+                    .contact {
+                        margin-left: 20px;
+                        text-decoration: none;
+                        color: #1A1A1A;
+                        font-size: 16px;
+                        font-style: normal;
+                        font-weight: 700;
+                        line-height: normal;
+                    }
+                }
+            }
+
+            &_chart {
+                margin-top: 30px;
+                color: var(--minor-text, #AAABAB);
+                font-family: Manrope;
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+            }
+        }
+
+        .services,
+        .info {
+            h6 {
+                color: #1A1A1A;
+                font-family: Manrope;
+                font-size: 24px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: normal;
+                margin: 0;
+
+            }
+
+            &_items {
+                margin-top: 60px;
+
+                &_item:not(:last-of-type) {
+                    margin-bottom: 16px;
+                }
+
+                &_item * {
+                    color: #1A1A1A;
+                    font-family: Manrope;
+                    font-size: 16px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: normal;
+                    text-decoration: none;
+                    transition: .2s ease;
+
+                }
+
+                a:hover {
+                    color: var(--bordo);
+                    text-decoration: underline;
+                }
+            }
+        }
+
+        .info {
+            &_items_item {
+                display: flex;
+                align-items: center;
+
+                .name {
+                    margin-bottom: 0;
+                    margin-right: 16px;
+                }
+            }
+        }
+    }
+
+    &_bottom {
+        .policy {
+            color: #000;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            text-decoration-line: underline;
+        }
+
+        .warning {
+            color: var(--minor-text, #AAABAB);
+            font-family: Manrope;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 300;
+            line-height: normal;
+            margin-top: 15px;
+            margin-bottom: 59px;
+        }
+    }
+}

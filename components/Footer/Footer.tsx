@@ -91,7 +91,7 @@ export default function Footer({ data }: { data: Footer }) {
                             </div>
                             <div className={classes.contacts_contacts}>
                                 {data.contacts.contacts.phone && (
-                                    <div>
+                                    <div className={classes.contacts_contacts_item}>
                                         <svg
                                             xmlns="http://www.w3.org/2000/svg"
                                             width="50"
@@ -135,7 +135,7 @@ export default function Footer({ data }: { data: Footer }) {
                                     </div>
                                 )}
                                 {data.contacts.contacts.telegram && (
-                                    <div>
+                                    <div className={classes.contacts_contacts_item}>
                                         <svg
                                             xmlns="http://www.w3.org/2000/svg"
                                             width="50"
@@ -177,7 +177,7 @@ export default function Footer({ data }: { data: Footer }) {
                                     </div>
                                 )}
                                 {data.contacts.contacts.location && (
-                                    <div>
+                                    <div className={classes.contacts_contacts_item}>
                                         <svg
                                             xmlns="http://www.w3.org/2000/svg"
                                             width="50"
@@ -257,8 +257,8 @@ export default function Footer({ data }: { data: Footer }) {
                         </div>
                     </div>
                     <div className={classes.Footer_bottom}>
-                        <Link href={data.policy.link}>{data.policy.text}</Link>
-                        {data.warning && <p>{data.warning}</p>}
+                        <Link href={data.policy.link} className={classes.policy}>{data.policy.text}</Link>
+                        {data.warning && <p className={classes.warning}>{data.warning}</p>}
                     </div>
                 </div>
             </div>
