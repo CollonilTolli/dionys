@@ -1,8 +1,15 @@
+@import './../../app/mixins.scss';
+
 .header {
-    display: flex;
     align-items: flex-start;
     justify-content: space-between;
     height: fit-content;
+    display: none;
+
+    @include breakpoint(s) {
+        display: flex;
+    }
+
     .logo {
         display: flex;
         align-items: flex-end;
