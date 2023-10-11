@@ -1,25 +1,34 @@
-'use client'
 import responce from "@/public/data/category/data.json"
 import Header from "@/components/Header/Header"
 import Footer from "@/components/Footer/Footer"
 import Form from "@/components/Form/Form"
 import { notFound } from "next/navigation"
-import { usePathname } from "next/navigation"
 import Breadcrumbs from "@/components/Breadcrumbs/Breadcrumbs"
 import Price from '@/components/Price/Price';
 import TextContentConstructor from "@/components/TextContentConstructor/TextContentConstructor"
 import SliderDetail from "@/components/SliderDetail/SliderDetail"
 
+export async function generateStaticParams() {
+    const posts = responce
+   
+    return posts.map((post:any) => ({
+        post: post.products.map((elem:any)=>({
+            product: elem.product,
+            seo: elem.seo,
+            globals: elem.globals,
+            content: elem.content
+        })),
+    }))
+  }
 export function fData (responce:any, categoryName:string, productName:string) {
     const resp = responce.find((category:any) => category.id === categoryName)
     const data:any = resp.products.find((product:any) => product.product===productName)
     return data
 }
 
-export default function Page() {
-    const pathname = usePathname()
-    const categoryName = pathname.split('/')[1]
-    const productName = pathname.split('/')[2]
+export default function Page({ params }: { params:any }) {
+    const categoryName = params.id
+    const productName = params.product
     
     const data = fData(responce, categoryName, productName)
     if (!data){
