@@ -7,45 +7,56 @@ import Breadcrumbs from "@/components/Breadcrumbs/Breadcrumbs"
 import Price from "@/components/Price/Price"
 import TextContentConstructor from "@/components/TextContentConstructor/TextContentConstructor"
 import SliderDetail from "@/components/SliderDetail/SliderDetail"
-interface Item {
-    product: string;
-  }  
-  interface ResultItem {
-    category: string;
-    product: string;
-  }
-export function generateStaticParams() {
+
+interface ResultItem {
+    category: string
+    product: string
+}
+export async function  generateStaticParams() {
     const posts = responce
-    const result: ResultItem[] = [];
+    const result: ResultItem[] = []
 
     posts.forEach((category) => {
-      category.products.forEach((item) => {
-        result.push({
-          category: category.id,
-          product: item.product,
-        });
-      });
-    });
-  
-    return result;
+        category.products.forEach((item) => {
+            result.push({
+                category: category.id,
+                product: item.product,
+            })
+        })
+    })
+
+    return result
 }
-export function fData(
-    responce: any,
-    categoryName: string,
-    productName: string
-) {
-    const resp = responce.find((category: any) => category.id === categoryName)
-    const data: any = resp.products.find(
-        (product: any) => product.product === productName
-    )
-    return data
-}
+// export function fData(
+//     responce: any,
+//     categoryName: string,
+//     productName: string
+// ) {
+//     const resp = responce.find((category: any) => category.id === categoryName)
+//     const data: any = resp.products.find(
+//         (product: any) => product.product === productName
+//     )
+//     return data
+// }
 
 export default function Page({ params }: { params: any }) {
     const categoryName = params.id
     const productName = params.product
 
-    const data = fData(responce, categoryName, productName)
+    // const data = fData(responce, categoryName, productName)
+    const Data = () => {
+        responce.map((element: any) => {
+            if (element.id == params.id) {
+                element.map((el: any) => {
+                    if (el.product === params.product) return el
+                })
+            }
+            else {
+                return false
+            }
+        })
+    }
+    const data:any = Data()
     if (!data) {
         notFound()
     }
