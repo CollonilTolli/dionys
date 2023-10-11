@@ -7,19 +7,18 @@ import Breadcrumbs from "@/components/Breadcrumbs/Breadcrumbs"
 import Price from "@/components/Price/Price"
 import TextContentConstructor from "@/components/TextContentConstructor/TextContentConstructor"
 import SliderDetail from "@/components/SliderDetail/SliderDetail"
-
+import _ from "lodash"
 interface ResultItem {
-    category: string
+    id: string
     product: string
 }
-export async function  generateStaticParams() {
-    const posts = responce
+export async function generateStaticParams() {
     const result: ResultItem[] = []
 
-    posts.forEach((category) => {
+    responce.forEach((category) => {
         category.products.forEach((item) => {
             result.push({
-                category: category.id,
+                id: category.id,
                 product: item.product,
             })
         })
@@ -27,39 +26,24 @@ export async function  generateStaticParams() {
 
     return result
 }
-// export function fData(
-//     responce: any,
-//     categoryName: string,
-//     productName: string
-// ) {
-//     const resp = responce.find((category: any) => category.id === categoryName)
-//     const data: any = resp.products.find(
-//         (product: any) => product.product === productName
-//     )
-//     return data
-// }
 
 export default function Page({ params }: { params: any }) {
-    const categoryName = params.id
-    const productName = params.product
-
-    // const data = fData(responce, categoryName, productName)
-    const Data = () => {
+    const { id, product } = params
+    const Data: any = () => {
+        let i
         responce.map((element: any) => {
-            if (element.id == params.id) {
-                element.map((el: any) => {
-                    if (el.product === params.product) return el
+            if (element.id == id) {
+                element.products.map((el: any) => {
+                    if (el.product === product) {
+                        i = el
+                    }
                 })
             }
-            else {
-                return false
-            }
         })
+        return i || false
     }
-    const data:any = Data()
-    if (!data) {
-        notFound()
-    }
+
+    const data: any = Data()
     return (
         <div>
             <Header data={data.globals.header} />

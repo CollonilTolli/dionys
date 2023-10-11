@@ -31,11 +31,13 @@ export default function Page({
                 <div className="container ">
                     <h1>{data.content.title}</h1>
                 </div>
-                {data.globals.breadcrumbs && <Breadcrumbs data={data.globals.breadcrumbs} />}
+                {data.globals.breadcrumbs && (
+                    <Breadcrumbs data={data.globals.breadcrumbs} />
+                )}
                 <div className="container">
                     <p>{data.content.desctiption}</p>
                 </div>
-                <ProductsList data={data.products}/>
+                <ProductsList data={data.products} />
                 {data.content.Form && <Form data={data.content.Form} />}
             </main>
             <Footer data={data.globals.footer} />
