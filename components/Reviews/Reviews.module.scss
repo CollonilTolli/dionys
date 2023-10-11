@@ -37,8 +37,8 @@
         position: relative;
 
         .swiper {
+            margin-top: 50px;
             &_slide {
-                margin-top: 50px;
                 .text {
                     padding: 40px 60px;
                     border-radius: 12px;
@@ -86,7 +86,7 @@
     }
 
     .left {
-        top: -50px;
+        top: -80px;
         left: 0;
     }
 

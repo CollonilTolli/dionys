@@ -5,6 +5,7 @@ import { YMaps, Map, Placemark } from "@pbe/react-yandex-maps"
 import Link from "next/link"
 
 interface Contacts {
+    id?: string
     title: string
     yaCoord: number[]
     text: string
@@ -18,7 +19,7 @@ interface Contacts {
 
 export default function Contacts({ data }: { data: Contacts }) {
     return (
-        <div className={cn(classes.Contacts)}>
+        <div className={cn(classes.Contacts)} id={data.id}>
             <div className="container">
                 <div className={classes.Title}>{data.title}</div>
                 <div className={cn(classes.Contacts_content)}>

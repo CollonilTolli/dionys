@@ -237,7 +237,7 @@
             ]
         },
         "portfolioSlider": {
-            "id": "portfolioSlider",
+            "id": "potrfolio",
             "title": "Последние наши работы с реальными фото",
             "subtitle": "Посмотрите наши работы по г. Твери и Тверской области",
             "slides": [
@@ -417,6 +417,7 @@
             ]
         },
         "Contacts": {
+            "id": "contacts",
             "title": "Наши контакты",
             "yaCoord": [
                 61.698653,

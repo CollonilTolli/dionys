@@ -74,6 +74,15 @@ export default function Header({ data }: { data: HeaderData }) {
             setOpenedCategory(false)
         }
     }
+    const scrollToBlock = (link:string) => {
+        const block = document.querySelector(link.replace("/",''))
+        block?.scrollIntoView({ block: "center", behavior: "smooth" })
+        if(!block){
+            console.log(link)
+            window.location.pathname = "/"
+            window.location.href =  link
+        }
+    }
     return (
         <>
             <header>
@@ -133,14 +142,26 @@ export default function Header({ data }: { data: HeaderData }) {
                                     key={element.id}
                                 >
                                     {element.link ? (
-                                        <Link
-                                            href={element.link}
-                                            className={
-                                                classes.list_element_link
-                                            }
-                                        >
-                                            {element.name}
-                                        </Link>
+                                        element.link[1] === "#" ? (
+                                            <p
+                                                className={cn(
+                                                    classes.list_element_link,
+                                                    classes._noLink
+                                                )}
+                                                onClick={()=> scrollToBlock(element.link)}
+                                            >
+                                                {element.name}
+                                            </p>
+                                        ) : (
+                                            <Link
+                                                href={element.link}
+                                                className={
+                                                    classes.list_element_link
+                                                }
+                                            >
+                                                {element.name}
+                                            </Link>
+                                        )
                                     ) : (
                                         <p
                                             className={cn(

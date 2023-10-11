@@ -135,7 +135,13 @@ body {
   opacity: 1!important;
   transform: scale(1)!important;
 }
+.Reviews{
 
+  .swiper-button-next, .swiper-button-prev{
+    top: calc(50% - 50px);
+
+  }
+}
 .Error {
   display: flex;
   align-items: center;
