@@ -275,7 +275,7 @@
                     },
                     "btn": {
                         "content": "ХОЧУ ТАК ЖЕ",
-                        "type": "full",
+                        "type": "main",
                         "link": "/gates"
                     }
                 },
@@ -313,7 +313,7 @@
                     },
                     "btn": {
                         "content": "ХОЧУ ТАК ЖЕ",
-                        "type": "full",
+                        "type": "main",
                         "link": "/gates"
                     }
                 },
@@ -355,7 +355,7 @@
                     },
                     "btn": {
                         "content": "ХОЧУ ТАК ЖЕ",
-                        "type": "full",
+                        "type": "main",
                         "link": "/gates"
                     }
                 }

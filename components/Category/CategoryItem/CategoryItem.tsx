@@ -34,7 +34,7 @@ export default function CategoryItem({ data }: { data: CategoryItem }) {
                     <span className={classes.title}>{data.title}</span>
                 </div>
             </Link>
-            <Button data={data.btn} />
+            <Button className={classes.button} data={data.btn} />
         </div>
     )
 }

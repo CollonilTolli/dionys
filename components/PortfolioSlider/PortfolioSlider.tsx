@@ -1,11 +1,12 @@
 "use client"
 import classes from "./PortfolioSlider.module.scss"
 import { Swiper, SwiperSlide } from "swiper/react"
-import { Navigation } from "swiper/modules"
+import { useSwiperSlide } from "swiper/react"
 import "swiper/css"
 import Image from "next/image"
 import Button from "../ui/Button/Button"
 import cn from "classnames"
+import { SwiperCustomButtons } from "./SwiperCustomButtons"
 
 interface PortfolioSlider {
     id?: string
@@ -51,15 +52,16 @@ export default function PortfolioSlider({ data }: { data: PortfolioSlider }) {
                 </div>
                 <div className={classes.PortfolioSlider_swiper}>
                     <Swiper
-                        slidesPerView={3}
-                        navigation={true}
-                        modules={[Navigation]}
+                        slidesPerView={1}
+                        spaceBetween={50}
+                        navigation={false}
+                        allowTouchMove={false}
                         className={classes.swiper}
                     >
                         {data.slides.map((element) => (
                             <SwiperSlide
                                 key={element.title}
-                                className={classes.swiper_slide}
+                                className={cn(classes.swiper_slide)}
                             >
                                 {element.image && (
                                     <div className={classes.swiper_slide_image}>
@@ -115,13 +117,19 @@ export default function PortfolioSlider({ data }: { data: PortfolioSlider }) {
                                                 <div
                                                     key={el.name}
                                                     className={
-                                                        classes.swiper_content_stat
+                                                        classes.swiper_content_stats_stat
                                                     }
                                                 >
-                                                    <span>{el.name} </span>
+                                                    <span
+                                                        className={
+                                                            classes.swiper_content_stats_stat_name
+                                                        }
+                                                    >
+                                                        {el.name}{" "}
+                                                    </span>
                                                     <div
                                                         className={
-                                                            classes.swiper_content_stats_plate
+                                                            classes.swiper_content_stats_stat_plate
                                                         }
                                                     >
                                                         {el.plateContent}
@@ -168,10 +176,13 @@ export default function PortfolioSlider({ data }: { data: PortfolioSlider }) {
                                             )}
                                         </div>
                                     )}
+                                    {element.btn && (
+                                        <Button className={classes.button} data={element.btn} />
+                                    )}
                                 </div>
-                                {element.btn && <Button data={element.btn} />}
                             </SwiperSlide>
                         ))}
+                        <SwiperCustomButtons />
                     </Swiper>
                 </div>
             </div>

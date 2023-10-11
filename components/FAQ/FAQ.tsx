@@ -16,7 +16,7 @@ export default function FAQ({ data }: { data: FAQtype }) {
                 <div className={classes.FAQ_questions}>
                     {
                         data.questions.map(el=> (
-                            <FAQItem data={el}/>
+                            <FAQItem key={el.name} data={el}/>
                         ))
                     }
                 </div>

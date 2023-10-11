@@ -1,3 +1,5 @@
+@import "@/app/mixins.scss";
+
 .CategoryItem {
     filter: drop-shadow(0px 0px 0px rgba(0, 0, 0, 0.1)) drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.1)) drop-shadow(0px 14px 14px rgba(0, 0, 0, 0.09)) drop-shadow(0px 32px 19px rgba(0, 0, 0, 0.05)) drop-shadow(0px 56px 23px rgba(0, 0, 0, 0.01)) drop-shadow(0px 88px 25px rgba(0, 0, 0, 0));
     max-width: 100%;
@@ -5,11 +7,13 @@
     display: flex;
     flex-direction: column;
     position: relative;
-    margin-top: 96px;
+    margin-top: 116px;
     padding: 340px 16px 16px;
     background: white;
     border-radius: 10px;
-
+    @include breakpoint(m){
+        max-width: 48%;
+    }
     .imageContainer {
         width: calc(100% - 64px);
         overflow: hidden;
@@ -46,5 +50,14 @@
                 transform: scale(1.05);
             }
         }
+    }
+    .button{
+        width: 100%;
+        max-width: 75%;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
     }
 }

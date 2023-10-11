@@ -50,6 +50,9 @@
                 width: 100%;
                 position: relative;
                 margin-bottom: 33px;
+                @include breakpoint(m){
+                    max-width: 48%;
+                }
                 &::before{
                     content: "";
                     display: block;
@@ -70,7 +73,7 @@
                     padding: 33px 0px 33px 125px;
 
                     @include breakpoint(s) {
-                       padding: 32px 56px;
+                       padding: 32px 75px;
                        margin: 0px 0px 16px 35px;
                     }
                 }

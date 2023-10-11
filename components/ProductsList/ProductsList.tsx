@@ -19,7 +19,7 @@ export default function ProductsList({ data }: { data: ProductsList[] }) {
             <div className="container">
                 <div className={classes.ProductList_content}>
                     {data.map((element) => (
-                        <div className={classes.ProductList_content_item}>
+                        <div className={classes.ProductList_content_item} key={element.content.name}>
                             <Link  className={classes.ProductList_content_link} href={`${pathname}/${element.product}`}>
                                 <Image
                                     className={classes.ProductList_content_image}

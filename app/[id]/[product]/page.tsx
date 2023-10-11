@@ -12,7 +12,7 @@ import SliderDetail from "@/components/SliderDetail/SliderDetail"
 
 export function fData (responce:any, categoryName:string, productName:string) {
     const resp = responce.find((category:any) => category.id === categoryName)
-    const data = resp.products.find((product:any) => product.product===productName)
+    const data:any = resp.products.find((product:any) => product.product===productName)
     return data
 }
 
