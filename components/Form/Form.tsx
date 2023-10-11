@@ -89,7 +89,7 @@ export default function Form({ data }: { data: Form }) {
                 setMessageNotice(false)
             }
         )
-    }, [formRef, messageNotice, URI_API])
+    }, [formRef, messageNotice, URI_API, chanelId])
     return (
         <div className={classes.Form}>
             <div className="container">
