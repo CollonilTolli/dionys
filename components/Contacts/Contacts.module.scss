@@ -1,3 +1,5 @@
+@import "@/app/mixins.scss";
+
 .Contacts {
     .Title {
         color: #000;
@@ -15,6 +17,11 @@
         justify-content: space-between;
         margin-top: 87px;
         height: fit-content;
+        gap: 30px;
+        flex-direction: column;
+        @include breakpoint(m){
+            flex-direction: row;
+        }
     }
 
     &_map {
@@ -26,12 +33,15 @@
     }
 
     &_contacts {
-        margin-left: 60px;
         border-radius: 12px;
         border: 3px solid #F5F5F5;
         background: #FFF;
         box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.11);
-        padding: 24px 40px 30px;
+        padding: 24px 27px;
+        @include breakpoint(m){
+            padding: 24px 40px 30px;
+            margin-left: 60px;
+        }
         .text {
             color: var(--minor-text, #AAABAB);
             font-family: Manrope;
@@ -47,7 +57,9 @@
             &_item {
                 display: flex;
                 align-items: center;
+                width: 100%;
                 svg{
+                    min-width: 50px;
                     width: 50px;
                     height: 50px;
                 }

@@ -1,69 +1,104 @@
+@import "@/app/mixins.scss";
+
 .BannerAbout {
     position: relative;
     overflow: hidden;
     padding-bottom: 50px;
-    .banner{
-        padding: 60px 0 92px;
+    display: flex;
+    flex-direction: column;
+    background-color: #F5F5F5;
+    @include breakpoint(m){
+        background-color: unset;
+    }
+    .banner {
         background-color: #F5F5F5;
         position: relative;
         margin-top: 154px;
         overflow-x: hidden;
         overflow-y: clip;
+        padding: 60px 0 0px;
+        @include breakpoint(m){
+            padding: 60px 0 92px;
+        }
     }
+
     .container {
         position: relative;
         z-index: 1;
+
         .title {
             h3 {
+                margin: 0;
                 color: #000;
                 font-family: Manrope;
-                font-size: 32px;
+                font-size: 24px;
                 font-style: normal;
                 font-weight: 700;
                 line-height: normal;
-                margin: 0;
+
+                @include breakpoint(m) {
+                    font-size: 32px;
+                    font-weight: 700;
+                }
 
                 strong {
                     color: var(--bordo, #9B2D30);
-                    font-family: Manrope;
-                    font-size: 32px;
-                    font-style: normal;
-                    font-weight: 700;
-                    line-height: normal;
                     text-transform: uppercase;
                 }
             }
         }
 
         .text {
-            max-width: 45vw;
             margin-top: 31px;
+
+            @include breakpoint(m) {
+                max-width: 45vw;
+            }
 
             p {
                 color: #000;
                 font-family: Manrope;
-                font-size: 24px;
+                font-size: 16px;
                 font-style: normal;
                 font-weight: 400;
                 line-height: normal;
-                margin-top: 1em;
+
+                @include breakpoint(m) {
+                    color: #000;
+                    font-family: Manrope;
+                    font-size: 24px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: normal;
+                    margin-top: 1em;
+                }
             }
         }
     }
 
     .Image {
-        position: absolute;
-        right: -50px;
-        bottom: -70px;
+        position: relative;
+        bottom: -50px;
         height: 100%;
-        width: 40vw;
         z-index: 0;
         user-select: none;
+        right: 170px;
+        min-height: 378px;
+        width: 200%;
+        @include breakpoint(m) {
+            position: absolute;
+            right: -50px;
+            bottom: -70px;
+            width: 40vw;
+            min-height: unset;
+        }
+
         img {
             object-fit: contain;
         }
     }
-    .scrollButton{
+
+    .scrollButton {
         cursor: pointer;
         background-color: transparent;
         border: 10px solid white;
@@ -71,10 +106,17 @@
         position: absolute;
         left: calc(50% - 70px);
         padding: 0;
+        display: none;
         margin: 0;
-        bottom: 0;
+        bottom: -35px;
         transition: .2s ease;
-        &:hover{
+        width: 90px;
+        height: 90px;
+        @include breakpoint(m){
+            bottom: 0; 
+            display: block;
+        }
+        &:hover {
             bottom: -5px;
         }
     }

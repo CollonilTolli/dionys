@@ -1,7 +1,7 @@
 "use client"
 import classes from "./PortfolioSlider.module.scss"
 import { Swiper, SwiperSlide } from "swiper/react"
-import { useSwiperSlide } from "swiper/react"
+import { Pagination } from "swiper/modules"
 import "swiper/css"
 import Image from "next/image"
 import Button from "../ui/Button/Button"
@@ -55,8 +55,16 @@ export default function PortfolioSlider({ data }: { data: PortfolioSlider }) {
                         slidesPerView={1}
                         spaceBetween={50}
                         navigation={false}
-                        allowTouchMove={false}
+                        allowTouchMove={true}
                         className={classes.swiper}
+                        modules={[Pagination]}
+                        pagination={{ clickable: true }}
+                        breakpoints={{
+                            1024: {
+                                pagination:false,
+                                allowTouchMove: false
+                            }
+                        }}
                     >
                         {data.slides.map((element) => (
                             <SwiperSlide
@@ -177,7 +185,10 @@ export default function PortfolioSlider({ data }: { data: PortfolioSlider }) {
                                         </div>
                                     )}
                                     {element.btn && (
-                                        <Button className={classes.button} data={element.btn} />
+                                        <Button
+                                            className={classes.button}
+                                            data={element.btn}
+                                        />
                                     )}
                                 </div>
                             </SwiperSlide>

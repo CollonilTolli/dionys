@@ -1,3 +1,5 @@
+@import "@/app/mixins.scss";
+
 .FAQ {
     background-color: #F5F5F5;
     margin-top: 40px;
@@ -13,7 +15,8 @@
         line-height: normal;
         margin: 0 auto;
     }
-    &_questions{
+
+    &_questions {
         margin-top: 60px;
     }
 }
@@ -23,8 +26,11 @@
     border-radius: 12px;
     margin-bottom: 30px;
     overflow: hidden;
-    padding: 30px 60px;
+    padding: 24px 20px ;
+    @include breakpoint(m){
+        padding: 30px 60px;
 
+    }
     &_head {
         display: flex;
         align-items: center;
@@ -32,22 +38,27 @@
 
         &_button {
             cursor: pointer;
-            svg{
+
+            svg {
                 transition: all .2s ease;
-                path{
+
+                path {
                     transition: all .2s ease;
                     transform-origin: 0 31px;
-                }    
+                }
             }
         }
 
         &_name {
             color: #000;
             font-family: Manrope;
-            font-size: 24px;
+            font-size: 16px;
             font-style: normal;
             font-weight: 400;
             line-height: normal;
+            @include breakpoint(m){
+                font-size: 24px;
+            }
         }
     }
 
@@ -84,8 +95,9 @@
     &_opened {
         .FAQItem_head {
             &_button {
-                svg{
+                svg {
                     fill: var(--bordo);
+
                     path {
                         transform: scaleY(-1);
                         fill: white;

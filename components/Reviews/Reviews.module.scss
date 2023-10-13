@@ -1,3 +1,4 @@
+@import "@/app/mixins.scss";
 .Reviews {
     margin-top: 118px;
 
@@ -38,9 +39,10 @@
 
         .swiper {
             margin-top: 50px;
+
             &_slide {
                 .text {
-                    padding: 40px 60px;
+                    padding: 24px 18px ;
                     border-radius: 12px;
                     box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.1), 0px 1px 2px 0px rgba(0, 0, 0, 0.1), 0px 4px 4px 0px rgba(0, 0, 0, 0.09), 0px 9px 5px 0px rgba(0, 0, 0, 0.05), 0px 16px 6px 0px rgba(0, 0, 0, 0.01), 0px 25px 7px 0px rgba(0, 0, 0, 0);
                     color: #000;
@@ -50,6 +52,9 @@
                     font-weight: 400;
                     line-height: 150%;
                     /* 24px */
+                    @include breakpoint(l){
+                        padding: 40px 60px;
+                    }
                 }
 
                 .persona {
@@ -60,6 +65,7 @@
                     justify-content: center;
                     align-items: center;
                     margin-top: 40px;
+
                     .name {
                         color: #000;
                         text-align: center;
@@ -79,19 +85,38 @@
         }
 
     }
+
     .quote {
         position: absolute;
         z-index: 2;
         width: fit-content;
+
+        svg {
+            width: 65px;
+            height: 55px;
+
+            @include breakpoint(l) {
+                width: 83px;
+                height: 70px;
+            }
+        }
     }
 
     .left {
-        top: -80px;
         left: 0;
+        top: -15px;
+        @include breakpoint(l) {
+            top: -80px;
+            left: 0;
+        }
     }
 
     .right {
+        bottom: 90px;
         right: 0;
-        bottom: 40px;
+        @include breakpoint(l) {
+            right: 0;
+            bottom: 40px;
+        }
     }
 }

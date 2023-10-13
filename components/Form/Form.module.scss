@@ -1,6 +1,4 @@
-.plate_active {
-    background-color: limegreen;
-}
+@import "@/app/mixins.scss";
 
 .Form {
     margin-top: 100px;
@@ -9,17 +7,24 @@
         color: #000;
         text-align: center;
         font-family: Manrope;
-        font-size: 32px;
+        font-size: 24px;
         font-style: normal;
         font-weight: 700;
         line-height: normal;
+
+        @include breakpoint(m) {
+            font-size: 32px;
+        }
     }
 
     .form {
         display: flex;
         flex-direction: column;
-        max-width: 60%;
         width: 100%;
+
+        @include breakpoint(m) {
+            max-width: 60%;
+        }
     }
 
     .policy {
@@ -30,6 +35,7 @@
         line-height: normal;
         margin-top: 15px;
         margin-left: 10px;
+
         a {
             margin-left: 5px;
             color: var(--minor-text, #AAABAB);
@@ -45,27 +51,53 @@
         margin-top: 60px;
         display: flex;
         justify-content: space-between;
+        flex-direction: column;
 
-        &_description {
-            max-width: 30%;
+        @include breakpoint(m) {
+            flex-direction: row;
+
+            &_description {
+                max-width: 30%;
+            }
         }
 
         .Description {
             &_text {
                 color: #000;
+                text-align: center;
                 font-family: Manrope;
-                font-size: 24px;
+                font-size: 16px;
                 font-style: normal;
                 font-weight: 700;
                 line-height: normal;
 
-                span>span {
+                @include breakpoint(m) {
                     color: #000;
                     font-family: Manrope;
                     font-size: 24px;
                     font-style: normal;
+                    font-weight: 700;
+                    line-height: normal;
+
+                }
+
+                span>span {
+                    color: #000;
+                    font-family: Manrope;
+                    font-size: 16px;
+                    font-style: normal;
                     font-weight: 400;
                     line-height: normal;
+
+                    @include breakpoint(m) {
+
+                        color: #000;
+                        font-family: Manrope;
+                        font-size: 24px;
+                        font-style: normal;
+                        font-weight: 400;
+                        line-height: normal;
+                    }
                 }
             }
 
@@ -73,7 +105,7 @@
                 display: flex;
                 align-items: center;
                 margin-top: 30px;
-
+                justify-content: flex-start;
                 span {
                     color: #000;
                     font-family: Manrope;
@@ -88,16 +120,24 @@
 
         .Fields {
             display: inline-flex;
-            padding: 60px 46.001px 60px 47.594px;
+            padding: 13px;
+            gap: 35px;
             flex-direction: column;
             justify-content: center;
-            align-items: flex-start;
-            gap: 48px;
             border-radius: 24px;
             background: linear-gradient(0deg, #FFF 0%, #FFF 100%), linear-gradient(179deg, rgba(255, 255, 255, 0.69) 0.78%, rgba(242, 242, 242, 0.69) 102.39%), #EEE;
             box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.11);
             width: 100%;
+            align-items: center;
+            @include breakpoint(m) {
+                align-items: flex-start;
+                gap: 48px;
+                padding: 60px 46.001px 60px 47.594px;
 
+            }
+            form{
+                width: 100%;
+            }
             .button {
                 border-radius: 16px;
                 padding: 24px 64px;
@@ -120,18 +160,26 @@
                     gap: 8px;
 
                     .plate {
-                        padding: 16px 40px;
-                        border-radius: 8px;
-                        border: 2px solid rgba(73, 2, 2, 0.30);
+                        padding: 9px;
                         color: rgba(73, 2, 2, 0.30);
                         text-align: center;
                         font-family: Manrope;
-                        font-size: 20px;
+                        font-size: 16px;
                         font-style: normal;
                         font-weight: 500;
                         line-height: normal;
+                        border-radius: 8px;
+                        border: 2px solid rgba(73, 2, 2, 0.30);
                         transition: .2s ease;
                         cursor: pointer;
+
+                        @include breakpoint(m) {
+                            color: rgba(73, 2, 2, 0.30);
+                            font-size: 20px;
+                            font-weight: 500;
+                            padding: 16px 40px;
+
+                        }
 
                         &_active {
                             color: #fff;
@@ -162,15 +210,23 @@
                         border-bottom: rgba(73, 2, 2, 0.30) 3px solid;
                         width: 100%;
                         resize: none;
+
                         color: #BDA8A8;
-                        font-size: 20px;
+                        font-family: Poppins;
+                        font-size: 16px;
                         font-style: normal;
                         font-weight: 500;
                         line-height: normal;
+
+                        padding: 15px 0;
+
                         margin-bottom: 20px;
                         outline: none;
-                        padding: 15px 0;
-                        height: 60px;
+
+                        @include breakpoint(m) {
+                            height: 60px;
+                            font-size: 20px;
+                        }
 
                         &:not(:placeholder-shown),
                         &:focus {

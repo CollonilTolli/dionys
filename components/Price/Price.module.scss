@@ -11,8 +11,9 @@
     border: 1px solid var(--bordo);
     border-radius: 12px; 
     width: fit-content;
-    margin: 60px 0;
+    margin: 10px 0;
     @include breakpoint(s){
+        margin: 60px 0;
         margin: 30px 0 120px;
     }
 }

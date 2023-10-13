@@ -1,3 +1,5 @@
+@import "@/app/mixins.scss";
+
 .PortfolioSlider {
     margin-top: 190px;
     max-width: 100vw;
@@ -5,24 +7,33 @@
 
     &_title {
         color: #000;
+        text-align: center;
         font-family: Manrope;
-        font-size: 32px;
+        font-size: 24px;
         font-style: normal;
         font-weight: 700;
         line-height: normal;
-        text-align: center;
         margin: 0;
+
+        @include breakpoint(s) {
+            font-size: 32px;
+        }
     }
 
     &_subtitle {
         color: #000;
+        text-align: center;
         font-family: Manrope;
-        font-size: 32px;
+        font-size: 16px;
         font-style: normal;
         font-weight: 400;
         line-height: normal;
-        text-align: center;
         margin-top: 30px;
+
+        @include breakpoint(s) {
+
+            font-size: 32px;
+        }
     }
 
     &_swiper {
@@ -34,50 +45,73 @@
         align-items: center;
         position: relative;
         overflow: unset;
-        height: 750px;
-
+        min-height: 750px;
+        flex-direction: column;
         &_slide {
             display: flex;
-            
             border-radius: 24px;
             align-items: center;
+            flex-direction: column;
             transform-origin: 0 0;
             transform: scale(0.7);
             transition: transform .5s ease, opacity .7s ease;
             opacity: 0.5;
             position: relative;
             z-index: 1;
-            &::after {
-                content: "";
-                display: block;
-                width: 100%;
-                height: 100%;
-                border-radius: 24px;
-                background: linear-gradient(180deg, #FFF 0%, #FFF 100%);
-                box-shadow: 0px 1px 11px 0px rgba(0, 0, 0, 0.25);
-                position: absolute;
-                bottom: 24px;
-                right: -24px;
-                z-index: -9999999999;
+
+            @include breakpoint(m) {
+                flex-direction: row;
+
+                &::after {
+                    content: "";
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 24px;
+                    background: linear-gradient(180deg, #FFF 0%, #FFF 100%);
+                    box-shadow: 0px 1px 11px 0px rgba(0, 0, 0, 0.25);
+                    position: absolute;
+                    bottom: 24px;
+                    right: -24px;
+                    z-index: -9999999999;
+                }
             }
 
             &_image {
-                border-radius: 24px 0 0 24px;
                 overflow: hidden;
                 position: relative;
-                width: 45%;
                 height: 100%;
+                width: 100%;
+                min-height: 360px;
+                border-radius: 24px 24px 0px 0px;
+
+                @include breakpoint(s) {
+                    min-height: 680px;
+                }
+
+                @include breakpoint(m) {
+                    width: 45%;
+                    border-radius: 24px 0 0 24px;
+                    min-height: unset;
+                }
             }
 
         }
 
         &_content {
-            padding: 20px 40px;
             background: linear-gradient(180deg, #F7F7F9 100%, #E4E5E6 0%);
             height: 100%;
             max-width: 100%;
-            width: 55%;
-            border-radius: 0 24px 24px 0;
+            width: 100%;
+            padding: 20px 24px;
+
+            @include breakpoint(m) {
+                padding: 20px 40px;
+                width: 55%;
+                border-radius: 0 24px 24px 0;
+                min-height: unset;
+            }
+
             &_title {
                 color: #000;
                 font-family: Manrope;
@@ -104,7 +138,7 @@
                 margin-top: 60px;
                 display: flex;
                 gap: 70px;
-
+                flex-wrap: wrap;
                 &_stat {
                     display: flex;
                     flex-direction: column;
@@ -150,11 +184,13 @@
         }
 
         ul {
-            max-height: 88px;
             overflow-y: auto;
             padding-left: 20px;
             margin-top: 24px;
+            @include breakpoint(m){
+                max-height: 88px;
 
+            }
             li {
                 color: #000;
                 font-family: Manrope;
@@ -168,20 +204,30 @@
 
     .button {
         margin-top: 45px;
-        width: fit-content;
-        padding: 24px 120px;
+        width: 100%;
         border-radius: 24px;
         text-decoration: none;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        @include breakpoint(m){
+            padding: 24px 120px;
+            width: fit-content;
+        }
     }
 
     .SwiperButtons {
         width: calc(100% + 70px);
         position: absolute;
         left: -35px;
-        display: flex;
         align-items: center;
         justify-content: space-between;
         z-index: 2;
+        display: none;
+
+        @include breakpoint(m) {
+            display: flex;
+        }
 
         &_Prev,
         &_Next {

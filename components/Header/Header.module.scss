@@ -5,19 +5,27 @@
     justify-content: space-between;
     height: fit-content;
     display: none;
-
+    position: relative;
     @include breakpoint(s) {
         display: flex;
+        margin-top: 105px!important;
+    }
+    @include breakpoint(m){
+        margin-top: 0!important;
     }
 
     .logo {
         display: flex;
         align-items: flex-end;
         justify-content: flex-start;
-        max-width: 33%;
         margin-top: auto;
         text-decoration: none;
-
+        @include breakpoint(s) {
+            max-width: 50%;
+        }
+        @include breakpoint(m) {
+            max-width: 33%;
+        }
         &_image {
             font-size: 0;
         }
@@ -41,6 +49,14 @@
         display: flex;
         align-items: center;
 
+        @include breakpoint(s) {
+            position: absolute;
+            left: calc(50% - 90px);
+            top: -105px;
+        }
+        @include breakpoint(m){
+            position: static;
+        }
         &_flag {
             font-size: 0;
         }
@@ -89,10 +105,15 @@
         flex-direction: column;
         align-items: flex-end;
         justify-content: center;
-        width: 25%;
         margin-top: auto;
+        width: 100%;
         margin-bottom: 16px;
-
+        @include breakpoint(s) {
+            max-width: 50%;
+        }
+        @include breakpoint(m) {
+            max-width: 25%;
+        }
         &_phoneNumber {
             color: var(--black);
             font-size: 24px;
@@ -268,6 +289,7 @@
         transform-origin: 0 0;
         transition: .2s ease;
         transform: scaleY(0);
+
         ul,
         li,
         a {
@@ -327,28 +349,33 @@
             }
         }
     }
-    .openCategory ~ .dropdown {
+
+    .openCategory~.dropdown {
         height: 100%;
         transform: scaleY(1);
         opacity: 1;
 
     }
-    
+
     @include breakpoint(s) {
         display: none;
     }
 }
-.Opened{
+
+.Opened {
     background-color: var(--white);
-    .Title{
-        path{
+
+    .Title {
+        path {
             fill: var(--bordo);
         }
     }
-    .burgerButton > div{
+
+    .burgerButton>div {
         background-color: var(--bordo);
     }
-    .mobileHeader_burgerContent{
+
+    .mobileHeader_burgerContent {
         transform: scaleY(1);
     }
 }
