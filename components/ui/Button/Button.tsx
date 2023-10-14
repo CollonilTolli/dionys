@@ -5,23 +5,25 @@ import Image from "next/image"
 import Link from "next/link"
 import Pngwing from "@/images/pngwing.png"
 
+
 interface data {
     className?: any
     link?: string
     content: string
     func?: any
     type?: string
+    
 }
 export default function Button({
     data,
     className,
+    onClick
 }: {
     data: data
     className?: any
+    onClick?: any
 }) {
-    const handleClick = (func: any) => {
-        console.log(func)
-    }
+    const handleClick = (func: any) => {}
     switch (data.type) {
         case "withImage":
             return (
@@ -36,6 +38,7 @@ export default function Button({
                             )}
                             href={data.link}
                             title={data.content}
+                            onClick={() => onClick()}
                         >
                             {data.content}
                             <Image
@@ -53,7 +56,7 @@ export default function Button({
                                 className,
                                 data.className,
                             )}
-                            onClick={() => handleClick(data.func)}
+                            onClick={() => onClick()}
                         >
                             {data.content}
                             <Image
@@ -80,6 +83,7 @@ export default function Button({
                             )}
                             href={data.link}
                             title={data.content}
+                            onClick={() => onClick() }
                         >
                             {data.content}
                         </Link>
@@ -91,7 +95,7 @@ export default function Button({
                                 className,
                                 data.className,
                             )}
-                            onClick={() => handleClick(data.func)}
+                            onClick={() => onClick() }
                         >
                             {data.content}
                         </button>
@@ -111,6 +115,7 @@ export default function Button({
                             )}
                             href={data.link}
                             title={data.content}
+                            onClick={() => onClick() }
                         >
                             {data.content}
                         </Link>
@@ -122,7 +127,7 @@ export default function Button({
                                 classes.button,
                                 classes.main,
                             )}
-                            onClick={() => handleClick(data.func)}
+                            onClick={() => onClick() }
                         >
                             {data.content}
                         </button>

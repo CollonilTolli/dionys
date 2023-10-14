@@ -47,6 +47,7 @@
         overflow: unset;
         min-height: 750px;
         flex-direction: column;
+
         &_slide {
             display: flex;
             border-radius: 24px;
@@ -93,6 +94,8 @@
                     width: 45%;
                     border-radius: 24px 0 0 24px;
                     min-height: unset;
+                    min-height: 750px;
+                    height: 100%;
                 }
             }
 
@@ -110,6 +113,7 @@
                 width: 55%;
                 border-radius: 0 24px 24px 0;
                 min-height: unset;
+                min-height: 750px;
             }
 
             &_title {
@@ -139,6 +143,7 @@
                 display: flex;
                 gap: 70px;
                 flex-wrap: wrap;
+
                 &_stat {
                     display: flex;
                     flex-direction: column;
@@ -187,10 +192,12 @@
             overflow-y: auto;
             padding-left: 20px;
             margin-top: 24px;
-            @include breakpoint(m){
+
+            @include breakpoint(m) {
                 max-height: 88px;
 
             }
+
             li {
                 color: #000;
                 font-family: Manrope;
@@ -210,7 +217,8 @@
         text-align: center;
         display: flex;
         justify-content: center;
-        @include breakpoint(m){
+
+        @include breakpoint(m) {
             padding: 24px 120px;
             width: fit-content;
         }
@@ -227,6 +235,7 @@
 
         @include breakpoint(m) {
             display: flex;
+            top: calc(50% - 35px);
         }
 
         &_Prev,

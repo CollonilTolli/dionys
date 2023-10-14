@@ -1,0 +1,132 @@
+@import "@/app/mixins.scss";
+.ModalForm {
+    position: fixed;
+    top: 10vh;
+    left: calc(50vw - 25%);
+    height: 80vh;
+    width: 50vw;
+    background-color: #fff;
+    opacity: 0;
+    transition: opacity .4s ease .2s;
+    z-index: 99999;
+    min-height: 500px;
+    &::after {
+        z-index: -99;
+        content: "";
+        width: 100vw;
+        height: 100vh;
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: var(--bordo);
+        opacity: .5;
+        
+    }
+    .close{
+        padding: 0;
+        margin: 0;
+        border: none;
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        right: 20px;
+        top: 20px;
+        background-color: transparent;
+        &>div{
+            width: 5px;
+            height: 20px;
+            background-color: var(--bordo);
+            border-radius: 3px;
+            transform: rotate(45deg);
+            position: absolute;
+            top: 0;
+            &:first-of-type{
+                transform: rotate(-45deg);
+            }
+        }
+    }
+    &.Opened {
+        opacity: 1;
+    }
+
+    .Content {
+        padding: 60px;
+        background-color: #fff;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-height: 80vh;
+        height: 80vh;
+        min-height: 500px;
+        gap: 20px 0;
+        .Logo{
+            width: 15%;
+            height: 20%;
+            svg{
+                width: 100%;
+                height: 100%;
+            }
+        }
+        .Text{
+            color: #000;
+            text-align: center;
+            font-family: Manrope;
+            font-size: 32px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            min-width: 50%;
+        }
+        .Form{
+            width: 50%;
+            form{
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+                *{
+                    width: 100%;
+                }
+                input,
+                textarea {
+                    border: none;
+                    border-bottom: rgba(73, 2, 2, 0.30) 3px solid;
+                    width: 100%;
+                    resize: none;
+
+                    color: #BDA8A8;
+                    font-family: Poppins;
+                    font-size: 16px;
+                    font-style: normal;
+                    font-weight: 500;
+                    line-height: normal;
+
+                    padding: 15px 0;
+
+                    margin-bottom: 20px;
+                    outline: none;
+
+                    @include breakpoint(m) {
+                        height: 60px;
+                        font-size: 20px;
+                    }
+
+                    &:not(:placeholder-shown),
+                    &:focus {
+                        color: #9B2D30;
+                        border-bottom: #9B2D30 3px solid;
+                    }
+                }
+            }
+        }
+        .Button{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+        }
+    }
+}

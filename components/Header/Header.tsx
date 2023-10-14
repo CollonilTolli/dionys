@@ -6,6 +6,7 @@ import YaFlag from "@/images/yaFlag.svg"
 import YaLogo from "@/images/yaLogo.svg"
 import Link from "next/link"
 import { useState } from "react"
+import ModalForm from "../ui/Modals/ModalForm/ModalForm"
 
 interface Links {
     link?: string
@@ -28,7 +29,13 @@ interface HeaderData {
     phoneLink: string
 }
 
-function Stars({ yaLink }: { yaLink: string }) {
+function Stars({
+    yaLink,
+    setOpenModal,
+}: {
+    yaLink: string
+    setOpenModal: any
+}) {
     const stars: any[] = [
         { starStatus: "starBad" },
         { starStatus: "starBad" },
@@ -36,28 +43,51 @@ function Stars({ yaLink }: { yaLink: string }) {
         { starStatus: "starGood" },
         { starStatus: "starGood" },
     ]
+
     return (
         <>
-            {stars.map((el: any, index: number) => (
-                <a
-                    href={el.starStatus === "starBad" ? "#" : yaLink}
-                    key={index}
-                >
-                    <svg
+            {stars.map((el: any, index: number) =>
+                el.starStatus !== "starBad" ? (
+                    <a
+                        href={el.starStatus === "starBad" ? "#" : yaLink}
                         key={index}
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="12"
-                        height="12"
-                        fill="none"
-                        viewBox="0 0 12 12"
+                        className={classes.Star}
                     >
-                        <path
-                            fill="#CCC"
-                            d="M2.214 11.99l.941-4.066L0 5.189l4.168-.362L5.79.992l1.622 3.835 4.168.362-3.155 2.735.94 4.066L5.79 9.834 2.214 11.99z"
-                        ></path>
-                    </svg>
-                </a>
-            ))}
+                        <svg
+                            key={index}
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="12"
+                            height="12"
+                            fill="none"
+                            viewBox="0 0 12 12"
+                        >
+                            <path
+                                fill="#CCC"
+                                d="M2.214 11.99l.941-4.066L0 5.189l4.168-.362L5.79.992l1.622 3.835 4.168.362-3.155 2.735.94 4.066L5.79 9.834 2.214 11.99z"
+                            ></path>
+                        </svg>
+                    </a>
+                ) : (
+                    <div
+                        onClick={() => setOpenModal(true? false:true)}
+                        className={classes.Star}
+                    >
+                        <svg
+                            key={index}
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="12"
+                            height="12"
+                            fill="none"
+                            viewBox="0 0 12 12"
+                        >
+                            <path
+                                fill="#CCC"
+                                d="M2.214 11.99l.941-4.066L0 5.189l4.168-.362L5.79.992l1.622 3.835 4.168.362-3.155 2.735.94 4.066L5.79 9.834 2.214 11.99z"
+                            ></path>
+                        </svg>
+                    </div>
+                )
+            )}
         </>
     )
 }
@@ -65,6 +95,7 @@ export default function Header({ data }: { data: HeaderData }) {
     const stars = []
     const [openedBurger, setOpenedBurger] = useState(false)
     const [openedCategory, setOpenedCategory] = useState(false)
+    const [openModal, setOpenModal] = useState(false)
     const BurgerHandler = () => {
         if (!openedBurger) {
             setOpenedBurger(true)
@@ -74,17 +105,22 @@ export default function Header({ data }: { data: HeaderData }) {
             setOpenedCategory(false)
         }
     }
-    const scrollToBlock = (link:string) => {
-        const block = document.querySelector(link.replace("/",''))
+    const scrollToBlock = (link: string) => {
+        const block = document.querySelector(link.replace("/", ""))
         block?.scrollIntoView({ block: "center", behavior: "smooth" })
-        if(!block){
-            console.log(link)
+        if (!block) {
             window.location.pathname = "/"
-            window.location.href =  link
+            window.location.href = link
         }
     }
     return (
         <>
+            <ModalForm
+                data={{
+                    text: "Не торопитесь оставлять негативный отзыв. Поделитесь с нами своим опытом, что пошло не так? ",
+                }}
+                stateModal={openModal}
+            />
             <header>
                 <div className={cn(classes.header, "container")}>
                     <Link href="/" className={classes.logo}>
@@ -112,7 +148,10 @@ export default function Header({ data }: { data: HeaderData }) {
                                 <div className={classes.yandexLinks_stars_logo}>
                                     <Image src={YaLogo} alt="" />
                                 </div>
-                                <Stars yaLink={data.yaLink} />
+                                <Stars
+                                    yaLink={data.yaLink}
+                                    setOpenModal={() => setOpenModal(true)}
+                                />
                             </div>
                             <div className={classes.yandexLinks_text}>
                                 {data.yaText}
@@ -148,7 +187,11 @@ export default function Header({ data }: { data: HeaderData }) {
                                                     classes.list_element_link,
                                                     classes._noLink
                                                 )}
-                                                onClick={()=> scrollToBlock(element.link)}
+                                                onClick={() =>
+                                                    scrollToBlock(
+                                                        element.link || ""
+                                                    )
+                                                }
                                             >
                                                 {element.name}
                                             </p>
