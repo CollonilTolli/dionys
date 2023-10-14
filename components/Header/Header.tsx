@@ -71,6 +71,7 @@ function Stars({
                     <div
                         onClick={() => setOpenModal(true? false:true)}
                         className={classes.Star}
+                        key={index}
                     >
                         <svg
                             key={index}
