@@ -13,11 +13,11 @@
     .banner {
         background-color: #F5F5F5;
         position: relative;
-        margin-top: 154px;
         overflow-x: hidden;
         overflow-y: clip;
         padding: 60px 0 0px;
         @include breakpoint(m){
+            margin-top: 154px;
             padding: 60px 0 92px;
         }
     }

@@ -1,3 +1,5 @@
+@import "@/app/mixins.scss";
+
 .Category {
     .title {
         font-family: Manrope;
@@ -22,5 +24,9 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
+        margin-bottom: 100px;
+        @include breakpoint(m){
+            margin-bottom: 0;
+        }
     }
 }

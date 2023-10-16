@@ -11,7 +11,7 @@ export default function PolicyInner({ data }: { data: PolicyInner[] }) {
         <div className="container">
             {data.map((el, index) => (
                 <div className={classes.Clause} key={index}>
-                    <h4 className={classes.Clause_title}>{index+1}{el.name}</h4>
+                    <h4 className={classes.Clause_title}><em>{index+1}</em>{el.name}</h4>
                     {el.text && (
                         <p
                             className={classes.Clause_paragraph}

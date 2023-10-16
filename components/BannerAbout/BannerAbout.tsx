@@ -1,3 +1,4 @@
+"use client"
 import classes from "./BannerAbout.module.scss"
 import Image from "next/image"
 import cn from "classnames"
@@ -9,29 +10,41 @@ interface BannerAbout {
     text: string
 }
 export default function BannerAbout({ data }: { data: any }) {
+    function scrollHandler() {
+        window.scrollBy({
+            top: 120,
+            behavior: 'smooth'
+        })
+    }
     return (
         <div className={classes.BannerAbout}>
             <div className={classes.banner}>
-            <div className={cn(classes.container, "container")}>
-                {data.title && (
-                    <div className={classes.title}>
-                        <h3 dangerouslySetInnerHTML={{ __html: data.title }} />
-                    </div>
-                )}
-                {data.text && (
-                    <div className={classes.text}>
-                        <div dangerouslySetInnerHTML={{ __html: data.text }} />
-                    </div>
-                )}
-            </div>
+                <div className={cn(classes.container, "container")}>
+                    {data.title && (
+                        <div className={classes.title}>
+                            <h3
+                                dangerouslySetInnerHTML={{ __html: data.title }}
+                            />
+                        </div>
+                    )}
+                    {data.text && (
+                        <div className={classes.text}>
+                            <div
+                                dangerouslySetInnerHTML={{ __html: data.text }}
+                            />
+                        </div>
+                    )}
+                </div>
             </div>
             {data.image && (
                 <div className={classes.Image}>
                     <Image src={data.image} alt={data.alt || ""} fill />
                 </div>
             )}
-            <div className={classes.scrollButton}>
-
+            <div
+                className={classes.scrollButton}
+                onClick={() => scrollHandler()}
+            >
                 <svg
                     width="70"
                     height="70"

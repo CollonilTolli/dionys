@@ -277,6 +277,10 @@
                         "content": "ХОЧУ ТАК ЖЕ",
                         "type": "main",
                         "link": "/gates"
+                    },
+                    "categoryLink": {
+                        "link": "/gates",
+                        "text": "Перейти в каталог"
                     }
                 },
                 {

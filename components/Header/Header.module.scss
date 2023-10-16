@@ -6,12 +6,14 @@
     height: fit-content;
     display: none;
     position: relative;
+
     @include breakpoint(s) {
         display: flex;
-        margin-top: 105px!important;
+        margin-top: 105px !important;
     }
-    @include breakpoint(m){
-        margin-top: 0!important;
+
+    @include breakpoint(m) {
+        margin-top: 0 !important;
     }
 
     .logo {
@@ -20,12 +22,15 @@
         justify-content: flex-start;
         margin-top: auto;
         text-decoration: none;
+
         @include breakpoint(s) {
             max-width: 50%;
         }
+
         @include breakpoint(m) {
             max-width: 33%;
         }
+
         &_image {
             font-size: 0;
         }
@@ -54,9 +59,11 @@
             left: calc(50% - 90px);
             top: -105px;
         }
-        @include breakpoint(m){
+
+        @include breakpoint(m) {
             position: static;
         }
+
         &_flag {
             font-size: 0;
         }
@@ -108,12 +115,15 @@
         margin-top: auto;
         width: 100%;
         margin-bottom: 16px;
+
         @include breakpoint(s) {
             max-width: 50%;
         }
+
         @include breakpoint(m) {
             max-width: 25%;
         }
+
         &_phoneNumber {
             color: var(--black);
             font-size: 24px;
@@ -377,5 +387,37 @@
 
     .mobileHeader_burgerContent {
         transform: scaleY(1);
+    }
+}
+
+.MobileStars {
+    position: fixed;
+    z-index: 2;
+    bottom: 15px;
+    // left: 25vw;
+    // margin: 0 auto;
+    left: calc(50% - 75px);
+    max-width: 50vw;
+    width: fit-content;
+    border-radius: 12px;
+    background: #F6F6F6;
+    backdrop-filter: blur(2px);
+    padding: 12px;
+    @include breakpoint(s){
+        display: none;
+    }
+    &_Content {
+        gap: 6px;
+        display: flex;
+        align-items: center;
+    }
+
+    &_Description {
+        color: #858585;
+        font-family: Manrope;
+        font-size: 7.639px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: normal;
     }
 }

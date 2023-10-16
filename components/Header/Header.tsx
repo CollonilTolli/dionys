@@ -69,7 +69,7 @@ function Stars({
                     </a>
                 ) : (
                     <div
-                        onClick={() => setOpenModal(true? false:true)}
+                        onClick={() => setOpenModal(true ? false : true)}
                         className={classes.Star}
                         key={index}
                     >
@@ -376,6 +376,40 @@ export default function Header({ data }: { data: HeaderData }) {
                     ))}
                 </div>
             </header>
+            <div className={classes.MobileStars}>
+                <div className={classes.MobileStars_Content}>
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="15"
+                        height="15"
+                        fill="none"
+                        viewBox="0 0 15 15"
+                    >
+                        <g clipPath="url(#clip0_51_4354)">
+                            <path
+                                fill="#FC3F1D"
+                                d="M7.5 14.985a7.485 7.485 0 100-14.97 7.485 7.485 0 000 14.97z"
+                            ></path>
+                            <path
+                                fill="#fff"
+                                d="M10.208 12.2H8.565V4.072h-.732c-1.342 0-2.044.67-2.044 1.672 0 1.136.484 1.663 1.487 2.334l.827.556-2.375 3.563H3.96l2.137-3.18c-1.229-.878-1.92-1.735-1.92-3.181 0-1.807 1.26-3.036 3.644-3.036h2.375v9.396h.011v.002z"
+                            ></path>
+                        </g>
+                        <defs>
+                            <clipPath id="clip0_51_4354">
+                                <path fill="#fff" d="M0 0H15V15H0z"></path>
+                            </clipPath>
+                        </defs>
+                    </svg>
+                    <Stars
+                        yaLink={data.yaLink}
+                        setOpenModal={() => setOpenModal(true)}
+                    />
+                </div>
+                <div className={classes.MobileStars_Description}>
+                    {data.yaText}
+                </div>
+            </div>
         </>
     )
 }

@@ -29,20 +29,18 @@
 
     .policy {
         color: var(--minor-text, #AAABAB);
-        font-size: 17.292px;
         font-style: normal;
         font-weight: 300;
         line-height: normal;
         margin-top: 15px;
         margin-left: 10px;
-
-        a {
-            margin-left: 5px;
-            color: var(--minor-text, #AAABAB);
+        font-size: 12px;
+        @include breakpoint(s){
             font-size: 17.292px;
-            font-style: normal;
-            font-weight: 300;
-            line-height: normal;
+        }
+        a {
+            color: var(--minor-text, #AAABAB);
+            margin-left: 5px;
             text-decoration-line: underline;
         }
     }

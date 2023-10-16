@@ -7,6 +7,7 @@ import Image from "next/image"
 import Button from "../ui/Button/Button"
 import cn from "classnames"
 import { SwiperCustomButtons } from "./SwiperCustomButtons"
+import Link from "next/link"
 
 interface PortfolioSlider {
     id?: string
@@ -37,6 +38,10 @@ interface PortfolioSlider {
                 type: string
             }
         }
+        categoryLink?: {
+            link: string
+            text: string
+        }
     }[]
 }
 
@@ -60,7 +65,11 @@ export default function PortfolioSlider({ data }: { data: PortfolioSlider }) {
                         modules={[Pagination]}
                         pagination={{ clickable: true }}
                         breakpoints={{
+                            300: {
+                                autoHeight: true
+                            },
                             1024: {
+                                autoHeight: false,
                                 pagination:false,
                                 allowTouchMove: false
                             }
@@ -190,6 +199,9 @@ export default function PortfolioSlider({ data }: { data: PortfolioSlider }) {
                                             data={element.btn}
                                         />
                                     )}
+                                    {element.categoryLink && 
+                                        <Link className={classes.CategoryLink} href={element.categoryLink.link}>{element.categoryLink.text}</Link>
+                                    }
                                 </div>
                             </SwiperSlide>
                         ))}
