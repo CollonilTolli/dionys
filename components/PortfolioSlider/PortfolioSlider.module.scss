@@ -59,7 +59,7 @@
             opacity: 0.5;
             position: relative;
             z-index: 1;
-
+            max-height: 750px;
             @include breakpoint(m) {
                 flex-direction: row;
 

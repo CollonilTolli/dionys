@@ -144,15 +144,15 @@
                     "text": "Работаем по договору, в котором<br/> фиксируем цену"
                 },
                 {
-                    "image": "/images/pngwing4.png",
+                    "image": "/images/pngwing8.png",
                     "text": "Используем только<br/> качественные материалы"
                 },
                 {
-                    "image": "/images/pngwing4.png",
+                    "image": "/images/pngwing5.png",
                     "text": "Кратчайшие сроки<br/> монтажа заборов"
                 },
                 {
-                    "image": "/images/pngwing4.png",
+                    "image": "/images/pngwing6.png",
                     "text": "Бригада мастеров в<br/> штате"
                 }
             ]
@@ -177,7 +177,7 @@
                 },
                 {
                     "text": "",
-                    "image": "/images/category1.jpg",
+                    "image": "/images/category2.png",
                     "id": "fences",
                     "link": "/fences",
                     "title": "Заборы",
@@ -204,13 +204,13 @@
                     "id": "1",
                     "text": "Я хотел бы поделиться своим положительным опытом работы с компанией, занимающейся установкой заборов и ворот. С самого начала нашего общения, сотрудники компании проявили профессионализм и отзывчивость. Они выслушали все наши требования и предоставили полезную информацию о различных типах заборов и ворот. Установка была выполнена вовремя и качественно, с большим вниманием к деталям. Качество материалов, которые использовала компания, превзошло наши ожидания. В целом, я очень доволен работой этой компании и рекомендую ее всем, кто ищет надежного партнера для установки заборов и ворот.",
                     "name": "Имя Фамилия",
-                    "photo": "/images/pngwing4.png"
+                    "photo": "/images/women.png"
                 },
                 {
                     "id": "2",
                     "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean gravida tempor nisl hendrerit efficitur. Aliquam consequat ex arcu, vel vulputate nisi faucibus eu. Morbi ornare cursus odio, id auctor ante efficitur vel. Nunc ac venenatis libero, ac ultrices nunc. Maecenas sed sem nec ligula cursus tincidunt in a tellus. Vivamus turpis ante, tincidunt et enim et, viverra posuere massa. Maecenas aliquet sem at turpis gravida interdum. Pellentesque semper nisl quis turpis accumsan mattis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed condimentum, neque eget aliquam tempor, turpis tortor facilisis orci, a gravida nunc dui id lectus. Suspendisse vehicula ante sit amet egestas laoreet. Suspendisse ornare turpis vitae ipsum lacinia fermentum. Phasellus tellus quam, mattis quis fringilla in, tempor quis ex. Vivamus maximus pellentesque ante at feugiat. Donec vitae sem a turpis finibus facilisis. ",
                     "name": "Имя Фамилия",
-                    "photo": "/images/pngwing4.png"
+                    "photo": "/images/women.png"
                 }
             ]
         },
@@ -223,16 +223,16 @@
                     "subtitle": "Вы можете оставить заявку на сайте или позвонить нам по номеру телефона +7 995 692-15-14"
                 },
                 {
-                    "title": "Оставьте заявку",
-                    "subtitle": "Вы можете оставить заявку на сайте или позвонить нам по номеру телефона +7 995 692-15-14"
+                    "title": "Получите предложение и согласуйте детали",
+                    "subtitle": "Мы свяжемся с вами для уточнения деталей проекта и предложим описание работ и стоимость."
                 },
                 {
-                    "title": "Оставьте заявку",
-                    "subtitle": "Вы можете оставить заявку на сайте или позвонить нам по номеру телефона +7 995 692-15-14"
+                    "title": "Производство и монтаж забора",
+                    "subtitle": "После вашего согласия начнем производство и монтаж забора."
                 },
                 {
-                    "title": "Оставьте заявку",
-                    "subtitle": "Вы можете оставить заявку на сайте или позвонить нам по номеру телефона +7 995 692-15-14"
+                    "title": "Гарантия и обслуживание",
+                    "subtitle": "Предоставим гарантию на работу и материалы, а также обеспечим обслуживание при необходимости."
                 }
             ]
         },

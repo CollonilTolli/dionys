@@ -22,7 +22,7 @@ export default function PolicyInner({ data }: { data: PolicyInner[] }) {
                     {el.subСlause && (
                         <ul>
                             {el.subСlause.map((e, i) => (
-                                <li key={e}><em>{index+1}.{i+1}</em>{e}</li>
+                                <li key={e} dangerouslySetInnerHTML={{ __html: `<em>${index+1}.${i+1}</em>${e}` }}/>
                             ))}
                         </ul>
                     )}

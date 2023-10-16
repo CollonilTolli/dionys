@@ -25,6 +25,8 @@
 
   img {
     transition: .2s linear transform;
+    z-index: -1;
+    
   }
 
   &:hover {
@@ -37,6 +39,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    box-shadow: 100px 100px 1000px 100px rgba(0, 0, 0, 0.5) inset;
   }
 
   .ProductList_content_text {
