@@ -29,7 +29,7 @@ export default function Contacts({ data }: { data: Contacts }) {
                                 defaultState={{ center: data.yaCoord, zoom: 15 }}
                                 height={435}
                                 width={700}
-                                style={{width: "100%"}}
+                                style={{width: "100%", height: "435px"}}
                             >
                                 <Placemark
                                     geometry={data.yaCoord}
