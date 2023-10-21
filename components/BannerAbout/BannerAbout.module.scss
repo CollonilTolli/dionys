@@ -87,12 +87,18 @@
         width: 200%;
         @include breakpoint(m) {
             position: absolute;
+            height: unset;
+            bottom: 50px;
+            width: 50vw;
             right: -50px;
-            bottom: -70px;
-            width: 40vw;
-            min-height: unset;
         }
+        @include breakpoint(l){
+            width: 40vw;
+            height: 100%;
+            bottom: -70px;
+            min-height: unset;
 
+        }
         img {
             object-fit: contain;
         }

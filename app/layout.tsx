@@ -1,3 +1,4 @@
+import CookieAlert from '@/components/CookieAlert/CookieAlert'
 import './globals.scss'
 
 export default function RootLayout({
@@ -7,7 +8,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ru">
-      <body>{children}</body>
+      <body>
+        {children}
+        <CookieAlert />
+      </body>
     </html>
   )
 }

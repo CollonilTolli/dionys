@@ -38,7 +38,7 @@ export default function Button({
                             )}
                             href={data.link}
                             title={data.content}
-                            onClick={() => onClick()}
+                            onClick={() => onClick ? onClick() : console.clear()}
                         >
                             {data.content}
                             <Image
@@ -56,7 +56,7 @@ export default function Button({
                                 className,
                                 data.className,
                             )}
-                            onClick={() => onClick()}
+                            onClick={() => onClick ? onClick() : console.clear()}
                         >
                             {data.content}
                             <Image
@@ -83,7 +83,7 @@ export default function Button({
                             )}
                             href={data.link}
                             title={data.content}
-                            onClick={() => onClick() }
+                            onClick={() => onClick ? onClick() : console.clear() }
                         >
                             {data.content}
                         </Link>
@@ -95,7 +95,7 @@ export default function Button({
                                 className,
                                 data.className,
                             )}
-                            onClick={() => onClick() }
+                            onClick={() => onClick ? onClick() : console.clear() }
                         >
                             {data.content}
                         </button>
@@ -115,7 +115,7 @@ export default function Button({
                             )}
                             href={data.link}
                             title={data.content}
-                            onClick={() => onClick() }
+                            onClick={() => onClick ? onClick() : console.clear() }
                         >
                             {data.content}
                         </Link>
@@ -127,7 +127,7 @@ export default function Button({
                                 classes.button,
                                 classes.main,
                             )}
-                            onClick={() => onClick() }
+                            onClick={ () => onClick ? onClick() : console.clear()}
                         >
                             {data.content}
                         </button>

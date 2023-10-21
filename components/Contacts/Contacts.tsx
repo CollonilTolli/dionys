@@ -27,8 +27,9 @@ export default function Contacts({ data }: { data: Contacts }) {
                         <YMaps>
                             <Map
                                 defaultState={{ center: data.yaCoord, zoom: 15 }}
-                                width={700}
                                 height={435}
+                                width={700}
+                                style={{width: "100%"}}
                             >
                                 <Placemark
                                     geometry={data.yaCoord}

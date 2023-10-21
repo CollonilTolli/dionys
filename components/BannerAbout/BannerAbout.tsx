@@ -12,7 +12,7 @@ interface BannerAbout {
 export default function BannerAbout({ data }: { data: any }) {
     function scrollHandler() {
         window.scrollBy({
-            top: 120,
+            top: 400,
             behavior: 'smooth'
         })
     }

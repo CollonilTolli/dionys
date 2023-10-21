@@ -1,11 +1,12 @@
 "use client"
 import cn from "classnames"
 import { useState, useEffect, createRef } from "react"
-import classes from "./ModalForm.module.scss"
+import classes from "./ModalCall.module.scss"
 import OutsideClickHandler from "react-outside-click-handler"
 import axios from "axios"
 import Button from "@/components/ui/Button/Button"
 import ModalAlert from "../ModalAlert/ModalAlert"
+import Link from "next/link"
 
 type MessageContent =
     | "name"
@@ -15,15 +16,20 @@ type MessageContent =
     | "textArea"
 
 type MessageMapper = Record<MessageContent, string>
-interface ModalForm {
-    text: string
+interface ModalCall {
+    title?: string
+    fields: {
+        placeholder: string
+        type: string
+    }[]
+    text?: string
     buttonClose?: boolean
 }
-export default function ModalForm({
+export default function ModalCall({
     data,
     stateModal,
 }: {
-    data: ModalForm
+    data: ModalCall
     stateModal?: boolean
 }) {
     const [openModal, setOpenModal] = useState(stateModal)
@@ -120,7 +126,7 @@ export default function ModalForm({
             "submit",
             function (this: any, el: any) {
                 el.preventDefault()
-                let message = `<b>Отзыв</b>\n`
+                let message = `<b>Вызов</b>\n`
                 const messageMapper: MessageMapper = {
                     name:
                         this.name &&
@@ -148,7 +154,6 @@ export default function ModalForm({
                 setOpenModal(false)
                 setopenAlertModal(true)
             }
-            
         )
     }, [formRef, messageNotice, URI_API, chanelId])
 
@@ -157,7 +162,7 @@ export default function ModalForm({
             {openModal && (
                 <div
                     className={cn(
-                        classes.ModalForm,
+                        classes.ModalCall,
                         openModal && classes.Opened
                     )}
                 >
@@ -211,36 +216,55 @@ export default function ModalForm({
                                     ></path>
                                 </svg>
                             </div>
-                            <div className={classes.Text}>{data.text}</div>
+                            {data.title && (
+                                <div className={classes.Title}>
+                                    {data.title}
+                                </div>
+                            )}
+                            {data.text && (
+                                <div className={classes.Text}>{data.text}</div>
+                            )}
                             <div className={classes.Form}>
                                 <form ref={formRef}>
-                                    <input
-                                        required={true}
-                                        type="text"
-                                        className={classes.field}
-                                        name="name"
-                                        placeholder="Как к Вам можно обращаться?"
-                                    />
-                                    <input
-                                        required={true}
-                                        type="tel"
-                                        className={classes.field}
-                                        data-tel-input-modal
-                                        name="phone_number"
-                                        placeholder="+7(____)___-__-__"
-                                    />
-                                    <textarea
-                                        required={true}
-                                        name="textArea"
-                                        placeholder="Опишите, что вам не понравилось"
-                                    />
+                                    {data.fields.map((el) => (
+                                        <div key={el.placeholder} className={classes.Input}>
+                                            {el.type === "tel" && (
+                                                <input
+                                                
+                                                    required={true}
+                                                    type={el.type}
+                                                    className={classes.field}
+                                                    data-tel-input-modal
+                                                    name="phone_number"
+                                                    placeholder={el.placeholder}
+                                                />
+                                            )}
+                                            {el.type === "name" && (
+                                                <input
+                                                    required={true}
+                                                    type="text"
+                                                    className={classes.field}
+                                                    name="name"
+                                                    placeholder={el.placeholder}
+                                                />
+                                            )}
+                                        </div>
+                                    ))}
+
                                     <Button
                                         className={classes.Button}
                                         data={{
-                                            content: "Отправить отзыв",
+                                            content: "Заказать звонок",
                                             type: "submit",
                                         }}
                                     />
+                                    <span className={classes.policy}>
+                                        заполняя данную форму вы даете согласие
+                                        на обработку
+                                        <Link href="/policy/">
+                                            персональных данных
+                                        </Link>
+                                    </span>
                                 </form>
                             </div>
                         </div>

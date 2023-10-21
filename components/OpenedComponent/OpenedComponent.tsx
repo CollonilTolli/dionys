@@ -4,9 +4,8 @@ import cn from "classnames"
 import Image from "next/image"
 import BgImage from "@/images/firstComponentMainPage.png"
 import Button from "../ui/Button/Button"
-import ModalAlert from "../ui/Modals/ModalAlert/ModalAlert"
 import { useState } from 'react';
-import ModalForm from "../ui/Modals/ModalForm/ModalForm"
+import ModalCall from "../ui/Modals/ModalCall/ModalCall"
 
 interface OpenedComponent {
     prequel: string
@@ -37,9 +36,19 @@ export default function OpenedComponent({ data }: { data: OpenedComponent }) {
                     dangerouslySetInnerHTML={{ __html: data.description }}
                 />
                 <Button data={data.btn} className={classes.button} onClick={()=>clickHandler()}/>
-                <ModalForm
+                <ModalCall
                     data={{
-                        text: "Заказать звонок",
+                        title: "Заказать звонок",
+                        fields: [
+                            {
+                                placeholder: "Ваше имя",
+                                type: "name"
+                            },
+                            {
+                                placeholder: "Телефон",
+                                type: "tel"
+                            }
+                        ],
                         buttonClose: true
                     }}
                     stateModal={openModal}

@@ -1,21 +1,25 @@
 @import "@/app/mixins.scss";
-.ModalForm {
+
+.ModalCall {
     position: fixed;
     top: 5vh;
     left: 5vw;
     height: 70vh;
     width: 90vw;
-    @include breakpoint(m){
+
+    @include breakpoint(m) {
         top: 10vh;
         left: calc(50vw - 25%);
         height: 50vh;
         width: 50vw;
     }
+
     background-color: #fff;
     opacity: 0;
     transition: opacity .4s ease .2s;
     z-index: 99999;
     min-height: 500px;
+
     &::after {
         z-index: -99;
         content: "";
@@ -27,9 +31,10 @@
         left: 0;
         background-color: var(--bordo);
         opacity: .5;
-        
+
     }
-    .close{
+
+    .close {
         padding: 0;
         margin: 0;
         border: none;
@@ -39,7 +44,8 @@
         right: 20px;
         top: 20px;
         background-color: transparent;
-        &>div{
+
+        &>div {
             width: 5px;
             height: 20px;
             background-color: var(--bordo);
@@ -47,11 +53,13 @@
             transform: rotate(45deg);
             position: absolute;
             top: 0;
-            &:first-of-type{
+
+            &:first-of-type {
                 transform: rotate(-45deg);
             }
         }
     }
+
     &.Opened {
         opacity: 1;
     }
@@ -63,20 +71,45 @@
         height: 100%;
         display: flex;
         flex-direction: column;
+
+        justify-content: space-between;
         align-items: center;
-        max-height: 80vh;
-        height: 80vh;
+        max-height: 600px;
+        height: 600px;
         min-height: 500px;
-        gap: 20px 0;
-        .Logo{
+        gap: 60px 0;
+
+        .Logo {
             width: 100%;
             height: 20%;
-            svg{
+
+            svg {
                 width: 100%;
                 height: 100%;
             }
         }
-        .Text{
+
+        .Title {
+            font-family: Manrope;
+            font-size: 32px;
+            font-weight: 700;
+            line-height: 44px;
+            letter-spacing: 0em;
+            text-align: left;
+            position: relative;
+            padding-bottom: 60px;
+
+            &::after {
+                content: "";
+                position: absolute;
+                left: -25%;
+                bottom: 0;
+                width: 150%;
+                border-bottom: 3px solid var(--bordo);
+            }
+        }
+
+        .Text {
             color: #000;
             text-align: center;
             font-family: Manrope;
@@ -86,24 +119,34 @@
             line-height: normal;
             min-width: 50%;
         }
-        .Form{
+
+        .Form {
             width: 100%;
             overflow-y: scroll;
-            @include breakpoint(m){
-                width: 50%;
+
+            @include breakpoint(m) {
+                width: 100%;
+                min-height: 50%;
             }
-            form{
+
+            form {
                 width: 100%;
                 display: flex;
-                flex-direction: column;
-                gap: 1vh;
-                *{
+                flex-direction: row;
+                justify-content: space-between;
+                gap: 1vh 30px;
+                flex-wrap: wrap;
+
+                * {
                     width: 100%;
+                }
+                .Input{
+                    max-width: calc(50% - 30px);
                 }
                 input,
                 textarea {
-                    border: none;
-                    border-bottom: rgba(73, 2, 2, 0.30) 3px solid;
+                    border: rgba(73, 2, 2, 0.30) 1px solid;
+                    border-radius: 12px;
                     width: 100%;
                     resize: none;
                     overflow: hidden;
@@ -114,7 +157,7 @@
                     font-weight: 500;
                     line-height: normal;
 
-                    padding: 1vh 0;
+                    padding: 14px 30px;
 
                     margin-bottom: 20px;
                     outline: none;
@@ -123,23 +166,51 @@
                         height: 60px;
                         max-height: 5vh;
                         font-size: 20px;
+                       
                     }
 
                     &:not(:placeholder-shown),
                     &:focus {
                         color: #9B2D30;
-                        border-bottom: #9B2D30 3px solid;
+                        border: #9B2D30 1px solid;
                     }
                 }
             }
         }
-        .Button{
+
+        .policy {
+            font-family: Manrope;
+            font-size: 16px;
+            font-weight: 300;
+            line-height: 22px;
+            letter-spacing: 0em;
+            text-align: left;
+            color: var(--minor-text, #AAABAB); 
+            @include breakpoint(m){
+                text-align: center;
+            }
+            a{
+                color: var(--minor-text, #AAABAB); 
+                font-size: 16px;
+                font-weight: 300;
+                line-height: 19px;
+                letter-spacing: 0em;
+                text-align: left;
+                &::before{
+                    content: " ";
+                }
+            }
+
+        }
+
+        .Button {
             width: 100%;
             display: flex;
             justify-content: center;
             text-align: center;
             padding: 3vh 2vw;
-            @include breakpoint(m){
+
+            @include breakpoint(m) {
                 padding: 24px 12px;
             }
         }

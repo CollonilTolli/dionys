@@ -46,12 +46,14 @@
     }
 
     &_step {
-        
+
         width: 100%;
         display: flex;
         flex-wrap: wrap;
         align-items: end;
-        @include breakpoint(m){
+        margin-top: 40px;
+
+        @include breakpoint(m) {
             max-width: 50%;
         }
     }
@@ -63,9 +65,11 @@
         align-items: flex-start;
         margin-top: 60px;
         flex-direction: column;
-        @include breakpoint(m){
+
+        @include breakpoint(m) {
             flex-direction: row;
         }
+
         .number {
             text-align: center;
             font-family: Manrope;
@@ -95,8 +99,13 @@
             width: 60%;
             white-space: pre-wrap;
             display: block;
-            padding-bottom: 20px;
+            padding-bottom: 10px;
             padding-left: 35px;
+
+            @include breakpoint(m) {
+                padding-bottom: 20px;
+            }
+
         }
 
         .subtitle {
