@@ -71,14 +71,17 @@
         height: 100%;
         display: flex;
         flex-direction: column;
-
-        justify-content: space-between;
+        justify-content: flex-start;
         align-items: center;
         max-height: 600px;
         height: 600px;
         min-height: 500px;
-        gap: 60px 0;
-
+        gap: 20px 0;
+        @include breakpoint(m){
+            justify-content: space-between;
+            gap: 60px 0;
+            
+        }
         .Logo {
             width: 100%;
             height: 20%;
@@ -91,21 +94,24 @@
 
         .Title {
             font-family: Manrope;
-            font-size: 32px;
+            font-size: 22px;
             font-weight: 700;
             line-height: 44px;
             letter-spacing: 0em;
             text-align: left;
             position: relative;
-            padding-bottom: 60px;
+            @include breakpoint(m){
+                padding-bottom: 60px;
+                font-size: 32px;
 
-            &::after {
-                content: "";
-                position: absolute;
-                left: -25%;
-                bottom: 0;
-                width: 150%;
-                border-bottom: 3px solid var(--bordo);
+                &::after {
+                    content: "";
+                    position: absolute;
+                    left: -25%;
+                    bottom: 0;
+                    width: 150%;
+                    border-bottom: 3px solid var(--bordo);
+                }
             }
         }
 
@@ -141,7 +147,10 @@
                     width: 100%;
                 }
                 .Input{
-                    max-width: calc(50% - 30px);
+                    max-width: 100%;
+                    @include breakpoint(m){
+                        max-width: calc(50% - 30px);
+                    }
                 }
                 input,
                 textarea {
@@ -180,19 +189,18 @@
 
         .policy {
             font-family: Manrope;
-            font-size: 16px;
             font-weight: 300;
             line-height: 22px;
+            font-size: 12px;
             letter-spacing: 0em;
             text-align: left;
             color: var(--minor-text, #AAABAB); 
             @include breakpoint(m){
+                font-size: 16px;
                 text-align: center;
             }
             a{
                 color: var(--minor-text, #AAABAB); 
-                font-size: 16px;
-                font-weight: 300;
                 line-height: 19px;
                 letter-spacing: 0em;
                 text-align: left;

@@ -1,8 +1,11 @@
+@import "@/app/mixins.scss";
+
 .CookieAlert {
     position: fixed;
     top: 16px;
-    right: 16px;
+    right: 0;
     width: fit-content;
+    max-width: 100vh;
     padding: 30px 50px;
     background-color: #fff;
     border-radius: 12px;
@@ -12,6 +15,10 @@
     align-items: center;
     flex-direction: column;
     z-index: 99999;
+    @include breakpoint(s){
+        right: 16px;
+
+    }
     p {
         color: #000;
         text-align: center;
