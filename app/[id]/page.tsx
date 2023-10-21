@@ -5,11 +5,37 @@ import _ from "lodash"
 import Form from "@/components/Form/Form"
 import Breadcrumbs from "@/components/Breadcrumbs/Breadcrumbs"
 import ProductsList from "@/components/ProductsList/ProductsList"
+import { Metadata } from "next"
 
 export async function generateStaticParams() {
     return responce.map((post: any) => ({
         id: post.id,
     }))
+}
+
+type Props = {
+    params: { id: string }
+    searchParams: { [key: string]: string | string[] | undefined }
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+    const id = params.id
+    const Data: any = () =>
+        responce.map((element: any) => {
+            if (element.id == params.id) return element
+        })
+    const resp = Data()
+    _.remove(resp, (item: any) => !item)
+    const data = resp[0]
+    return {
+        title: data.seo.title,
+        description: data.seo.description,
+        openGraph: {
+            title: data.seo.openGraph.title,
+            images: data.seo.openGraph.images,
+            description: data.seo.openGraph.description,
+        },
+    }
 }
 
 export default function Page({
