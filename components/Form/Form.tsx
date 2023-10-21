@@ -121,49 +121,52 @@ export default function Form({ data }: { data: Form }) {
             phoneInput.addEventListener("paste", onPhonePaste, false)
         })
     }, [])
+    function SendForm(this: any, el: any): any {
+        el.preventDefault()
+        if (messageNotice) {
+            let message = `<b>Уведомление</b>\n`
+            const messageMapper: MessageMapper = {
+                name:
+                    this.name &&
+                    (message += `<b>Имя:</b> ${this.name.value}\n`),
+                phone_number:
+                    this.phone_number &&
+                    (message += `<b>Номер Телефона:</b> ${this.phone_number.value}\n`),
+                e_mail:
+                    this.e_mail &&
+                    (message += `<b>Почта:</b> ${this.e_mail.value}\n`),
+                anyLink:
+                    this.anyLink &&
+                    (message += `<b>Ссылка</b> ${this.anyLink.value}\n`),
+                textArea:
+                    this.textArea &&
+                    (message += `<b>Текст:</b> ${this.textArea.value}\n`),
+            }
+            const category = document.querySelectorAll(
+                `.${classes.plate_active}`
+            )
+            const activeCategory: string[] = []
+            category.forEach((el: any) => {
+                activeCategory.push(el.innerText)
+            })
+            message += `Выбранные категории: ${activeCategory.toString()}`
+
+            axios.post(URI_API, {
+                chat_id: chanelId,
+                parse_mode: "html",
+                text: message,
+            })
+            formRef.current.removeEventListener("submit", SendForm)
+            setMessageNotice(false)
+        }
+        el.target.reset();
+    }
     useEffect(() => {
         if (formRef.current === null) return
-        formRef.current.addEventListener(
-            "submit",
-            function (this: any, el: any) {
-                el.preventDefault()
-                let message = `<b>Уведомление</b>\n`
-                const messageMapper: MessageMapper = {
-                    name:
-                        this.name &&
-                        (message += `<b>Имя:</b> ${this.name.value}\n`),
-                    phone_number:
-                        this.phone_number &&
-                        (message += `<b>Номер Телефона:</b> ${this.phone_number.value}\n`),
-                    e_mail:
-                        this.e_mail &&
-                        (message += `<b>Почта:</b> ${this.e_mail.value}\n`),
-                    anyLink:
-                        this.anyLink &&
-                        (message += `<b>Ссылка</b> ${this.anyLink.value}\n`),
-                    textArea:
-                        this.textArea &&
-                        (message += `<b>Текст:</b> ${this.textArea.value}\n`),
-                }
-                const category = document.querySelectorAll(
-                    `.${classes.plate_active}`
-                )
-                const activeCategory: string[] = []
-                category.forEach((el: any) => {
-                    activeCategory.push(el.innerText)
-                })
-                message += `Выбранные категории: ${activeCategory.toString()}`
-
-                if (messageNotice)
-                    axios.post(URI_API, {
-                        chat_id: chanelId,
-                        parse_mode: "html",
-                        text: message,
-                    })
-                setMessageNotice(false)
-            }
-        )
-    }, [formRef, messageNotice, URI_API, chanelId])
+        if (messageNotice) {
+            formRef.current.addEventListener("submit", SendForm, false)
+        }
+    }, [formRef, messageNotice])
     return (
         <div className={classes.Form}>
             <div className="container">
@@ -292,13 +295,27 @@ export default function Form({ data }: { data: Form }) {
                                         />
                                     )}
                                 </div>
-                                <Button
-                                    data={{
-                                        className: classes.button,
-                                        type: "submit",
-                                        content: `${data.btn.content}`,
-                                    }}
-                                />
+                                {messageNotice ? (
+                                    <Button
+                                        data={{
+                                            className: classes.button,
+                                            type: messageNotice
+                                                ? "submit"
+                                                : "main",
+                                            content: `${data.btn.content}`,
+                                        }}
+                                    />
+                                ) : (
+                                    <div
+                                        className={cn(
+                                            classes.button,
+                                            classes.IsSend
+                                        )}
+                                        onClick={()=>setMessageNotice(true)}
+                                    >
+                                        Спасибо, мы свяжемся с Вами!
+                                    </div>
+                                )}
                             </form>
                         </div>
                         <span className={classes.policy}>

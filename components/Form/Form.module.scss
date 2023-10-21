@@ -139,6 +139,12 @@
             .button {
                 border-radius: 16px;
                 padding: 24px 64px;
+                width: fit-content;
+                cursor: pointer;
+                &.IsSend{
+                    background-color: #2C9C47;
+                    color: #fff;
+                }
             }
 
             &_category {
