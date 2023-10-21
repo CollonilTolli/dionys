@@ -276,7 +276,7 @@
                     "btn": {
                         "content": "ХОЧУ ТАК ЖЕ",
                         "type": "main",
-                        "link": "/gates"
+                        "link": "/gates/Zaboryizprofnastila"
                     },
                     "categoryLink": {
                         "link": "/gates",
@@ -318,7 +318,11 @@
                     "btn": {
                         "content": "ХОЧУ ТАК ЖЕ",
                         "type": "main",
-                        "link": "/gates"
+                        "link": "/fences/Zaboryizprofnastila1"
+                    },
+                    "categoryLink": {
+                        "link": "/fences",
+                        "text": "Перейти в каталог"
                     }
                 },
                 {

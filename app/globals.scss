@@ -141,7 +141,12 @@ body {
   transform: scale(1)!important;
 }
 .Reviews{
-
+  .swiper-button-prev{
+    left: 15px;
+  }
+  .swiper-button-next{
+    right: 15px;
+  }
   .swiper-button-next, .swiper-button-prev{
     top: unset;
     bottom: 20px;
@@ -156,12 +161,16 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-
+  flex-direction: column-reverse;
+  margin-top: 100px;
+  @include breakpoint(s){
+    flex-direction: row;
+  }
   &_title {
     h1 {
       color: #000;
       font-family: Manrope;
-      font-size: 40px;
+      font-size: clamp(16px, 5vw, 40px);
       font-style: normal;
       font-weight: 700;
       line-height: normal;
@@ -171,7 +180,7 @@ body {
     h2 {
       color: #000;
       font-family: Manrope;
-      font-size: 40px;
+      font-size: clamp(16px, 5vw, 40px);
       font-style: normal;
       font-weight: 400;
       line-height: normal;
@@ -192,7 +201,7 @@ body {
     a {
       color: #000;
       font-family: Manrope;
-      font-size: 40px;
+      font-size: clamp(16px, 5vw, 40px);
       font-style: normal;
       font-weight: 400;
       line-height: normal;
@@ -207,7 +216,7 @@ body {
   &_StatusCode {
     color: var(--minor-text, #AAABAB);
     font-family: Manrope;
-    font-size: 322.078px;
+    font-size: clamp(120px, 15vw, 322px);
     font-style: normal;
     font-weight: 800;
     line-height: normal;
