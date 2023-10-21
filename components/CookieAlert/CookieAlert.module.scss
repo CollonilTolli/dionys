@@ -16,6 +16,8 @@
     flex-direction: column;
     z-index: 99999;
     @include breakpoint(s){
+        bottom: 16px;
+        top: unset;
         right: 16px;
 
     }
@@ -28,5 +30,12 @@
         font-weight: 500;
         line-height: normal;
         margin-bottom: 37px;
+    }
+    .button{
+        background-color: #2C9C47;
+        padding: 10px 50px;
+        &:hover{
+            background-color: #34b251;
+        }
     }
 }
