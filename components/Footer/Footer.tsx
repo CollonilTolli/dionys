@@ -1,5 +1,7 @@
 import classes from "./Footer.module.scss"
 import Link from "next/link"
+import Image from "next/image"
+
 interface Footer {
     contacts: {
         description: string
@@ -91,7 +93,11 @@ export default function Footer({ data }: { data: Footer }) {
                             </div>
                             <div className={classes.contacts_contacts}>
                                 {data.contacts.contacts.phone && (
-                                    <div className={classes.contacts_contacts_item}>
+                                    <div
+                                        className={
+                                            classes.contacts_contacts_item
+                                        }
+                                    >
                                         <svg
                                             xmlns="http://www.w3.org/2000/svg"
                                             width="50"
@@ -135,7 +141,11 @@ export default function Footer({ data }: { data: Footer }) {
                                     </div>
                                 )}
                                 {data.contacts.contacts.telegram && (
-                                    <div className={classes.contacts_contacts_item}>
+                                    <div
+                                        className={
+                                            classes.contacts_contacts_item
+                                        }
+                                    >
                                         <svg
                                             xmlns="http://www.w3.org/2000/svg"
                                             width="50"
@@ -177,7 +187,11 @@ export default function Footer({ data }: { data: Footer }) {
                                     </div>
                                 )}
                                 {data.contacts.contacts.location && (
-                                    <div className={classes.contacts_contacts_item}>
+                                    <div
+                                        className={
+                                            classes.contacts_contacts_item
+                                        }
+                                    >
                                         <svg
                                             xmlns="http://www.w3.org/2000/svg"
                                             width="50"
@@ -247,18 +261,42 @@ export default function Footer({ data }: { data: Footer }) {
                         <div className={classes.info}>
                             <h6>{data.info.title}</h6>
                             <div className={classes.info_items}>
-                                {data.info.info.map(el => (
-                                    <div className={classes.info_items_item} key={el.name}>
-                                        <div className={classes.name}>{el.name}</div>
-                                        {el.content && <div className={classes.content}>{el.content}</div>}
+                                {data.info.info.map((el) => (
+                                    <div
+                                        className={classes.info_items_item}
+                                        key={el.name}
+                                    >
+                                        <div className={classes.name}>
+                                            {el.name}
+                                        </div>
+                                        {el.content && (
+                                            <div className={classes.content}>
+                                                {el.content}
+                                            </div>
+                                        )}
                                     </div>
                                 ))}
                             </div>
                         </div>
                     </div>
                     <div className={classes.Footer_bottom}>
-                        <Link href={data.policy.link} className={classes.policy}>{data.policy.text}</Link>
-                        {data.warning && <p className={classes.warning}>{data.warning}</p>}
+                        <Link
+                            href={data.policy.link}
+                            className={classes.policy}
+                        >
+                            {data.policy.text}
+                        </Link>
+                        {data.warning && (
+                            <p className={classes.warning}>{data.warning}</p>
+                        )}
+                        <a href="https://col-studio.com/">
+                            <Image
+                                src="https://col-studio.com/static/media/DarkTheme.41559abced4006626d42a400418feecd.svg"
+                                alt=""
+                                width={100}
+                                height={100}
+                            />
+                        </a>
                     </div>
                 </div>
             </div>

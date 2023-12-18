@@ -1,8 +1,6 @@
 import classes from "./About.module.scss"
 import cn from "classnames"
 import Image from "next/image"
-import BgImage from "@/images/firstComponentMainPage.png"
-import Button from "../ui/Button/Button"
 
 interface About {
     blockId: string

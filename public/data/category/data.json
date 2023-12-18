@@ -1,5 +1,11 @@
 [
     {
+        "category" : [
+            {"id": "gates"},
+            {"id": "fences"}
+        ]
+    },
+    {
         "id": "gates",
         "seo": {
             "title": "Ворота",

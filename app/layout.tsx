@@ -1,17 +1,19 @@
-import CookieAlert from '@/components/CookieAlert/CookieAlert'
-import './globals.scss'
+import CookieAlert from "@/components/CookieAlert/CookieAlert"
+import "./globals.scss"
+import ErrorBalance from "@/components/ErrorBalance/ErrorBalance"
 
 export default function RootLayout({
-  children,
+    children,
 }: {
-  children: React.ReactNode
+    children: React.ReactNode
 }) {
-  return (
-    <html lang="ru">
-      <body>
-        {children}
-        <CookieAlert />
-      </body>
-    </html>
-  )
+    return (
+        <html lang="ru">
+            <body>
+                <ErrorBalance />
+                {/* {children} */}
+                {/* <CookieAlert /> */}
+            </body>
+        </html>
+    )
 }
