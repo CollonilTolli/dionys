@@ -16,8 +16,8 @@ interface ResultItem {
 export async function generateStaticParams() {
     const result: ResultItem[] = []
 
-    responce.forEach((category) => {
-        category.products.forEach((item) => {
+    responce.forEach((category: any) => {
+        category.products.forEach((item: any) => {
             result.push({
                 id: category.id,
                 product: item.product,
