@@ -4,17 +4,21 @@
   font-family: Manrope;
   src: url(/fonts/Manrope-VariableFont_wght.ttf);
 }
+
 ::-webkit-scrollbar {
   width: 17px;
 }
+
 ::-webkit-scrollbar-track {
   background: #FFFFFF;
   border-radius: 20px;
 }
+
 ::-webkit-scrollbar-thumb {
   background: #9B2D30;
   border-radius: 20px;
 }
+
 html {
   margin: 0;
   padding: 0;
@@ -34,7 +38,7 @@ body {
   padding: 0;
   background-color: #fff;
   position: relative;
-  
+
   * {
     scrollbar-color: #9B2D30 #FFFFFF;
     scrollbar-width: thin;
@@ -94,7 +98,8 @@ body {
     padding: 0 16px;
     max-width: 1192px;
     width: 100%;
-    @include breakpoint(s){
+
+    @include breakpoint(s) {
       padding: 0 45px;
     }
   }
@@ -111,9 +116,11 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    &-wrapper{
-      height: unset!important;
+
+    &-wrapper {
+      height: unset !important;
     }
+
     &-bullet {
       width: 16px;
       height: 16px;
@@ -132,40 +139,51 @@ body {
       }
     }
   }
-  &-button-next::after,  &-button-prev::after{
-    color: var(--bordo)!important;
+
+  &-button-next::after,
+  &-button-prev::after {
+    color: var(--bordo) !important;
   }
 }
-.swiper-slide-active{
-  opacity: 1!important;
-  transform: scale(1)!important;
+
+.swiper-slide-active {
+  opacity: 1 !important;
+  transform: scale(1) !important;
 }
-.Reviews{
-  .swiper-button-prev{
+
+.Reviews {
+  .swiper-button-prev {
     left: 15px;
   }
-  .swiper-button-next{
+
+  .swiper-button-next {
     right: 15px;
   }
-  .swiper-button-next, .swiper-button-prev{
+
+  .swiper-button-next,
+  .swiper-button-prev {
     top: unset;
     bottom: 20px;
-    @include breakpoint(l){
+
+    @include breakpoint(l) {
       bottom: unset;
       top: calc(50% - 50px);
     }
 
   }
 }
+
 .Error {
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-direction: column-reverse;
   margin-top: 100px;
-  @include breakpoint(s){
+
+  @include breakpoint(s) {
     flex-direction: row;
   }
+
   &_title {
     h1 {
       color: #000;
@@ -190,14 +208,17 @@ body {
 
   &_links {
     margin-top: 90px;
-    ul{
+
+    ul {
       margin: 0;
       padding: 0;
       list-style-type: none;
-      li:not(:first-of-type){
+
+      li:not(:first-of-type) {
         margin-top: 30px;
       }
     }
+
     a {
       color: #000;
       font-family: Manrope;
@@ -207,7 +228,7 @@ body {
       line-height: normal;
       text-decoration-line: underline;
 
-      &:hover{
+      &:hover {
         color: var(--bordo);
       }
     }
@@ -221,4 +242,8 @@ body {
     font-weight: 800;
     line-height: normal;
   }
+}
+
+.d-none {
+  display: none;
 }

@@ -11,8 +11,10 @@ export default function RootLayout({
         <html lang="ru">
             <body>
                 <ErrorBalance />
-                {/* {children} */}
-                {/* <CookieAlert /> */}
+                <div className="d-none">
+                    {children}
+                    <CookieAlert />
+                </div>
             </body>
         </html>
     )
