@@ -16,13 +16,16 @@
         justify-content: space-between;
         gap: 30px;
         flex-direction: column;
-        @include breakpoint(m){
+
+        @include breakpoint(m) {
             flex-direction: row;
         }
+
         .contacts {
-            @include breakpoint(m){
+            @include breakpoint(m) {
                 max-width: 33%;
             }
+
             &_description {
                 color: var(--minor-text, #AAABAB);
                 font-family: Manrope;
@@ -34,7 +37,7 @@
 
             &_contacts {
                 margin-top: 30px;
-     
+
                 &_item {
                     display: flex;
                     align-items: center;
@@ -81,9 +84,11 @@
 
             &_items {
                 margin-top: 20px;
-                @include breakpoint(m){
+
+                @include breakpoint(m) {
                     margin-top: 60px;
                 }
+
                 &_item:not(:last-of-type) {
                     margin-bottom: 16px;
                 }
@@ -141,4 +146,16 @@
             margin-bottom: 59px;
         }
     }
+
+    .ColStudio {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        text-decoration: none;
+        gap: 8px;
+        color: var(--black);
+        margin-bottom: 16px;
+    }
+
 }
